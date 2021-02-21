@@ -10,9 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="e">
+    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="Fixed some bugs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +98,7 @@
       <workItem from="1612666211473" duration="48965000" />
       <workItem from="1612805859169" duration="4444000" />
       <workItem from="1613892805406" duration="6323000" />
-      <workItem from="1613904215980" duration="27000" />
+      <workItem from="1613904215980" duration="698000" />
     </task>
     <task id="LOCAL-00001" summary="Updated images.">
       <created>1613887504981</created>
@@ -136,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613903253075</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed some bugs.">
+      <created>1613904277935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613904277935</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +163,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated images." />
     <MESSAGE value="Updated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated." />
+    <MESSAGE value="e" />
+    <MESSAGE value="Fixed some bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs." />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612526681335">
@@ -232,10 +240,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613887112717" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613903262951">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613904286352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613903262951" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613904286352" />
     <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613896012066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
