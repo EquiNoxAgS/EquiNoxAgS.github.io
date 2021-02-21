@@ -50,7 +50,7 @@ p {
 }
 
 strong {
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .btn-success:focus {
@@ -143,9 +143,10 @@ a:hover, a:active, a:focus {
 }
 
 .sk-spinner-wordpress.sk-spinner {
-  background-color: #bdc3c7;
-  width: 40px;
-  height: 40px;
+  background-color: #ffffff;
+  border-color: #1d2124;
+  width: 50px;
+  height: 50px;
   border-radius: 40px;
   position: relative;
   -webkit-animation: sk-innerCircle 1s linear infinite;
@@ -154,9 +155,9 @@ a:hover, a:active, a:focus {
 
 .sk-spinner-wordpress .sk-inner-circle {
   display: block;
-  background-color: #ffffff;
-  width: 16px;
-  height: 16px;
+  background-color: #333333;
+  width: 12px;
+  height: 12px;
   position: absolute;
   border-radius: 8px;
   top: 5px;
@@ -428,6 +429,7 @@ a:hover, a:active, a:focus {
 
 #single-project img {
     max-width: 970px;
+    height: 100%;
 }
 
 

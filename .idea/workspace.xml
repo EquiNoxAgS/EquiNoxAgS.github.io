@@ -10,8 +10,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="">
+    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="Updated images.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enning.html" beforeDir="false" afterPath="$PROJECT_DIR$/enning.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factory.html" beforeDir="false" afterPath="$PROJECT_DIR$/factory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/greenland.html" beforeDir="false" afterPath="$PROJECT_DIR$/greenland.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/growth.html" beforeDir="false" afterPath="$PROJECT_DIR$/growth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/key.html" beforeDir="false" afterPath="$PROJECT_DIR$/key.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other.html" beforeDir="false" afterPath="$PROJECT_DIR$/other.html" afterDir="false" />
     </list>
     <list id="e71a2191-4ee0-4e52-8249-7f03f016a069" name="Delete images directory" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,14 +60,14 @@
       <recent name="D:\Personal Site\Liu Huilin" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.about.html">
+  <component name="RunManager" selected="JavaScript Debug.about.html (1)">
+    <configuration name="about.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/about.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="about.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/about.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="datacenter_area.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/images/greenland/datacenter_area.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="greenland.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/greenland.html" useBuiltInWebServerPort="true">
+    <configuration name="greenland.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/greenland.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="greenland.html" type="JavascriptDebugType" temporary="true" uri="http://localhost:63342/Liu Huilin/greenland_.html" useBuiltInWebServerPort="true">
@@ -70,11 +81,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.about.html (1)" />
+        <item itemvalue="JavaScript Debug.greenland.html (1)" />
         <item itemvalue="JavaScript Debug.about.html" />
         <item itemvalue="JavaScript Debug.growth.html" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.greenland.html" />
-        <item itemvalue="JavaScript Debug.datacenter_area.html" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +109,16 @@
       <workItem from="1612659553065" duration="3794000" />
       <workItem from="1612666211473" duration="48965000" />
       <workItem from="1612805859169" duration="4444000" />
+      <workItem from="1613892805406" duration="2913000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated images.">
+      <created>1613887504981</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613887504981</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +135,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated images." />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612526681335">
@@ -185,10 +209,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613887112717" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613886962944">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613887543885">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613886962944" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613887543885" />
     <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613887172477">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
