@@ -10,21 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="Updated images.">
+    <list default="true" id="c64716f6-9a95-412a-80f4-56f3ebc5e274" name="Default Changelist" comment="e">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/enning.html" beforeDir="false" afterPath="$PROJECT_DIR$/enning.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/factory.html" beforeDir="false" afterPath="$PROJECT_DIR$/factory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greenland.html" beforeDir="false" afterPath="$PROJECT_DIR$/greenland.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/growth.html" beforeDir="false" afterPath="$PROJECT_DIR$/growth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/key.html" beforeDir="false" afterPath="$PROJECT_DIR$/key.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/library.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other.html" beforeDir="false" afterPath="$PROJECT_DIR$/other.html" afterDir="false" />
     </list>
-    <list id="e71a2191-4ee0-4e52-8249-7f03f016a069" name="Delete images directory" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,32 +49,32 @@
       <recent name="D:\Personal Site\Liu Huilin" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.about.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.growth.html">
     <configuration name="about.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/about.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="about.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/about.html" useBuiltInWebServerPort="true">
+    <configuration name="enning.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/enning.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="greenland.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/greenland.html" useBuiltInWebServerPort="true">
+    <configuration name="factory.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/factory.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="greenland.html" type="JavascriptDebugType" temporary="true" uri="http://localhost:63342/Liu Huilin/greenland_.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="growth.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/growth.html" useBuiltInWebServerPort="true">
+    <configuration name="growth.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/growth.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Liu Huilin/index.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/liuhuilin.xyz/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.about.html (1)" />
-        <item itemvalue="JavaScript Debug.greenland.html (1)" />
-        <item itemvalue="JavaScript Debug.about.html" />
         <item itemvalue="JavaScript Debug.growth.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.factory.html" />
+        <item itemvalue="JavaScript Debug.enning.html" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.about.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -109,7 +98,8 @@
       <workItem from="1612659553065" duration="3794000" />
       <workItem from="1612666211473" duration="48965000" />
       <workItem from="1612805859169" duration="4444000" />
-      <workItem from="1613892805406" duration="2913000" />
+      <workItem from="1613892805406" duration="6323000" />
+      <workItem from="1613904215980" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="Updated images.">
       <created>1613887504981</created>
@@ -118,7 +108,35 @@
       <option name="project" value="LOCAL" />
       <updated>1613887504981</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated.">
+      <created>1613895755558</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613895755558</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated.">
+      <created>1613899489411</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613899489411</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated.">
+      <created>1613902501350</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613902501350</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated.">
+      <created>1613903253075</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613903253075</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +156,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated images." />
+    <MESSAGE value="Updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated." />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612526681335">
@@ -201,6 +220,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="308" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612808731249" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1613895837087">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613895837087" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1612667203582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -209,14 +232,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613887112717" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613887543885">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1613903262951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613887543885" />
-    <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613887172477">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613903262951" />
+    <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613896012066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613887172477" />
+    <state x="843" y="795" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613896012066" />
     <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1612583102325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
