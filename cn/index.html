@@ -10,15 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <title>Liu Huilin</title>
-<link rel="icon" href="images/LOGO.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="images/LOGO.ico" type="image/x-icon" />
+<link rel="icon" href="../images/LOGO.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../images/LOGO.ico" type="image/x-icon" />
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/animate.min.css">
 
 <!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
 
 </head>
@@ -53,9 +53,9 @@
           <div class="row">
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/greenland.html">
+                    <a href="greenland.html">
                          <div class="portfolio-thumb">
-                              <img src="images/greenland/title.jpg" class="img-responsive">
+                              <img src="../images/greenland/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>Greenland: Datacenter City</h4>
@@ -67,9 +67,9 @@
                </div>
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/key.html">
+                    <a href="key.html">
                          <div class="portfolio-thumb">
-                              <img src="images/key/title.jpg" class="img-responsive">
+                              <img src="../images/key/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>Seize the Key</h4>
@@ -81,9 +81,9 @@
                </div>
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/growth.html">
+                    <a href="growth.html">
                          <div class="portfolio-thumb">
-                              <img src="images/growth/title.jpg" class="img-responsive">
+                              <img src="../images/growth/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>Trans.figure: Growth</h4>
@@ -95,9 +95,9 @@
                </div>
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/enning.html">
+                    <a href="enning.html">
                          <div class="portfolio-thumb">
-                              <img src="images/enning/title.jpg" class="img-responsive">
+                              <img src="../images/enning/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>En'ning Memory</h4>
@@ -109,9 +109,9 @@
                </div>
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/factory.html">
+                    <a href="factory.html">
                          <div class="portfolio-thumb">
-                              <img src="images/factory/title.jpg" class="img-responsive">
+                              <img src="../images/factory/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>The Second Life of the Factory</h4>
@@ -123,9 +123,9 @@
                </div>
 
                <div class="col-md-4 col-sm-4">
-                    <a href="en/library.html">
+                    <a href="library.html">
                          <div class="portfolio-thumb">
-                              <img src="images/library/title.jpg" class="img-responsive">
+                              <img src="../images/library/title.jpg" class="img-responsive">
                                    <div class="portfolio-overlay">
                                         <div class="portfolio-item">
                                              <h4>Book Stage on the Hill</h4>
@@ -147,27 +147,13 @@
 
 <!-- SCRIPTS -->
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/custom.js"></script>
 <!-- React for shared components -->
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="js/components.js"></script>
-
-<!-- Auto redirect to English version -->
-<script>
-// Auto redirect to English version when accessing root index.html
-window.addEventListener('DOMContentLoaded', function() {
-  const currentPath = window.location.pathname;
-  // Only redirect if we're on the root index.html and not already in a language folder
-  if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
-    if (!currentPath.includes('/cn/') && !currentPath.includes('/en/')) {
-      window.location.href = 'en/index.html';
-    }
-  }
-});
-</script>
+<script src="../js/components.js"></script>
 
 </body>
 </html>

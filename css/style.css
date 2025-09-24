@@ -201,11 +201,20 @@ a:hover, a:active, a:focus {
 
 .navbar-default .navbar-brand {
   padding-top: 6px;
+  padding-left: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 .navbar-default .navbar-brand .fa {
   color: #000;
   font-size: 42px;
+}
+
+.navbar-default .navbar-nav {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 6px;
 }
 
 .navbar-default .navbar-nav li a {
@@ -216,10 +225,6 @@ a:hover, a:active, a:focus {
     transition: all 0.4s ease-in-out;
     padding-right: 22px;
     padding-left: 22px;
-}
-
-.navbar-default .navbar-nav > li a:hover {
-    color: #333 !important;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -663,7 +668,6 @@ a:hover, a:active, a:focus {
 -----------------------------------------*/
 
 footer {
-    border-top: 1px solid #f0f0f0;
     padding: 100px 0px;
     position: relative;
 }
@@ -686,6 +690,76 @@ footer .footer-copyright {
   padding-top: 16px;
 }
 
+
+/*---------------------------------------
+    Language Switcher              
+-----------------------------------------*/
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  background: #ffffff;
+  padding: 4px 13px;
+  border-radius: 20px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 4px 4px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: normal;
+  border-radius: 12px;
+}
+
+.language-switcher button:hover {
+  color: #333;
+}
+
+.language-switcher button.active {
+  color: #000;
+  font-weight: bold;
+}
+
+.language-switcher button:focus {
+  outline: none;
+}
+
+.language-switcher .divider {
+  width: 1px;
+  height: 20px;
+  background-color: #777;
+  opacity: 0.2;
+  margin: 0 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Navbar logo responsive sizing */
+.navbar-logo {
+  width: 50%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 576px) {
+  .navbar-logo {
+    width: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-logo {
+    width: 33%;
+  }
+}
 
 /*---------------------------------------
    Social icon             
@@ -749,7 +823,7 @@ footer .footer-copyright {
 
   .navbar-default {
     margin-top: 0px;
-    text-align: center;
+    text-align: left;
   }
 
   #about .col-md-8 img {
