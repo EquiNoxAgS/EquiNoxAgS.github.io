@@ -1,0 +1,138 @@
+{
+  "en": {
+    "home": {
+      "name": "Liu Huilin | 刘慧琳",
+      "subtitle": "Architecture | CG & Coding | Illustration<br>UCLA AUD Suprastudio Technology | Zhejiang University B.Arch"
+    },
+    "gallery": {
+      "title": "Other Works",
+      "subtitle": "ACGN doujin, fan-art, photograph, daily practice, survey drawing, etc."
+    },
+    "projects": {
+      "greenland": "Greenland: Data City",
+      "key": "Key Points",
+      "growth": "Shaping·Growth",
+      "enning": "Enning Memory",
+      "factory": "Factory Rebirth",
+      "library": "Mountain Library"
+    },
+    "about": {
+      "title": "About me",
+      "description": "Hi! I'm Liu Huilin, an architecture student with multiple interest in computational design, CG, illustration, and more...",
+      "cv_title": "Curriculum Vitae",
+      "career_title": "Career Experience",
+      "education_title": "Education",
+      "skills_title": "Skills",
+      "comprehensive_title": "Comprehensive Abilities"
+    },
+    "career": {
+      "bydance_title": "ByteDance Inc.",
+      "douyin_live": "Douyin Live Intelligent Creation R&D",
+      "douyin_live_period": "July 2024 – Present",
+      "douyin_live_desc1": "Initiate the \"interactive effect\" capability for Douyin Live, which allows like and gift behaviors to affect the livestream screen. It reaches a maximum of 70,000+ anchors and an average daily revenue of 1 million+ CNY.",
+      "douyin_live_desc2": "Develop corresponding components and blueprint templates in Effect House tool, serving 300+ UGC artists to achieve efficient high-volume launch of such effects.",
+      "interactive_engineer": "Interactive Engineer",
+      "interactive_period": "March 2021 – July 2024",
+      "interactive_desc": "For ByteDance application products such as TikTok & CapCut, based on an internal self-developed engine, develop online visual effects, including shader editing, gameplay development, production efficiency improvement, performance optimization, etc."
+    },
+    "education": {
+      "ucla": "University of California, Los Angeles",
+      "ucla_degree": "Master's degree, Suprastudio Technology",
+      "ucla_desc": "Architecture X Digital Media Intersection Program, Graduate with Distinction",
+      "ucla_period": "Aug 2019 – June 2020",
+      "zju": "Zhejiang University",
+      "zju_degree": "Bachelor's degree, Architecture",
+      "zju_gpa": "GPA: 3.84/4.00",
+      "zju_period": "Sep 2014 – June 2019"
+    },
+    "skills": {
+      "professional_title": "Professional Skills",
+      "game_engine": "GameEngine",
+      "game_engine_tools": "Unity3D<br>Unreal",
+      "programming": "Programming Language",
+      "programming_langs": "OpenGL Shading Language<br>JavaScript<br>Lua<br>C#",
+      "dcc": "DCC",
+      "dcc_tools": "Blender<br>3ds max<br>Maya<br>Houdini",
+      "adobe": "Adobe Creative Suite",
+      "adobe_tools": "Photoshop<br>Illustrator<br>After Effect<br>Audition"
+    },
+    "comprehensive": {
+      "occupational": "Occupational Competence",
+      "occupational_skills": "Project Management<br>Communication & Collaboration<br>Decision Making<br>Lifelong Learning",
+      "knowledge": "Knowledge Domain",
+      "knowledge_areas": "Digital Media<br>Interaction Design<br>Architecture<br>Audio Video Editing",
+      "language": "Language Proficiency",
+      "languages": "Chinese<br>English<br>Japanese"
+    }
+  },
+  "cn": {
+    "home": {
+      "name": "Liu Huilin | 刘慧琳",
+      "subtitle": "建筑学 | CG与编程 | 插画<br>加州大学洛杉矶分校 AUD Suprastudio Technology | 浙江大学 建筑学学士"
+    },
+    "gallery": {
+      "title": "其他作品",
+      "subtitle": "ACGN同人、粉丝作品、摄影、日常练习、调研绘图等。"
+    },
+    "projects": {
+      "greenland": "格陵兰岛：数据之城",
+      "key": "执其关键",
+      "growth": "塑造·增长",
+      "enning": "恩宁记忆",
+      "factory": "工厂重生",
+      "library": "山中书台"
+    },
+    "about": {
+      "title": "关于我",
+      "description": "你好！我是刘慧琳，一名对计算设计、CG、插画等多个领域感兴趣的架构师...",
+      "cv_title": "简历",
+      "career_title": "工作经历 Career Experience",
+      "education_title": "教育经历 Education",
+      "skills_title": "专业技能 Professional Skills",
+      "comprehensive_title": "综合能力 Comprehensive Abilities"
+    },
+    "career": {
+      "bydance_title": "字节跳动 ByteDance Inc.",
+      "douyin_live": "抖音直播: 智能创作研发",
+      "douyin_live_period": "2024/07 - 2025/04",
+      "douyin_live_desc1": "结合抖音音频能力与画面识别能力,支持主播与观众在画面内互动的音乐类游戏与pk对战类游戏研发",
+      "douyin_live_desc2": "抖音Effect House工具内研发相应组件与蓝图模板,服务于300+UGC特效师,实现这类特效批量高效上线",
+      "douyin_live_desc3": "作为关键推动者,起步搭建观众点赞、送礼行为对直播画面产生影响的\"互动特效\"通信能力,该功能使用主播数量最多达到7w+,日均营收多达100w+",
+      "douyin_live_desc4": "直播交互特效项目获得抖音Hackathon大赛一等奖",
+      "interactive_engineer": "智能创作中台: 交互工程师",
+      "interactive_period": "2021/03 - 2024/07",
+      "interactive_desc1": "针对字节跳动抖音、剪映等应用,基于内部自研引擎与视觉识别算法,开发AR视觉效果",
+      "interactive_desc2": "工作内容: Shader编辑、Gameplay玩法开发、工作流效率提升、线上性能优化等。",
+      "interactive_desc3": "支持项目包含: 抖音好友互动游戏/AR艺术展布展/剪映醒图人像特效研发"
+    },
+    "education": {
+      "ucla": "加州大学洛杉矶分校 UCLA",
+      "ucla_degree": "Suprastudio Technology, 硕士学位",
+      "ucla_desc": "建筑学与数字媒体交叉项目<br>优秀毕业生",
+      "ucla_period": "2019/08 - 2020/06",
+      "zju": "浙江大学 Zhejiang University",
+      "zju_degree": "建筑学, 学士学位",
+      "zju_gpa": "GPA: 3.84/4.00",
+      "zju_period": "2014/09 - 2019/06"
+    },
+    "skills": {
+      "professional_title": "专业技能 Professional Skills",
+      "game_engine": "GameEngine",
+      "game_engine_tools": "Unity3D<br>Unreal",
+      "programming": "Programming Language",
+      "programming_langs": "OpenGL Shading Language<br>JavaScript<br>Lua<br>C#",
+      "dcc": "DCC",
+      "dcc_tools": "Blender<br>3ds max<br>Maya<br>Houdini",
+      "adobe": "Adobe Creative Suite",
+      "adobe_tools": "Photoshop<br>Illustrator<br>After Effect<br>Audition"
+    },
+    "comprehensive": {
+      "occupational": "职业素养",
+      "occupational_skills": "项目管理<br>沟通协作<br>决策能力<br>终身学习",
+      "knowledge": "领域知识",
+      "knowledge_areas": "数字媒体<br>交互设计<br>建筑设计<br>音视频编辑",
+      "language": "语言能力",
+      "languages": "中文 (母语) <br>英语 (无障碍沟通)<br>日本语 (日常会话)"
+    }
+  }
+}
