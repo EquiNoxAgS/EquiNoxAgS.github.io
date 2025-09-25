@@ -333,10 +333,14 @@ onDocumentReady(async function () {
 
 // Home Menu functionality
 function initializeHomeMenu() {
+  let currentFilter = null;
+  
   // Handle menu item clicks and language switching
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('menu-item')) {
       e.preventDefault();
+      
+      const filterValue = e.target.getAttribute('data-filter');
       
       // Toggle active state
       document.querySelectorAll('.menu-item').forEach(item => {
@@ -344,9 +348,28 @@ function initializeHomeMenu() {
       });
       e.target.classList.add('active');
       
-      // You can add specific actions for each menu item here
-      const text = e.target.textContent.trim();
-      console.log('Menu item clicked:', text);
+      // Apply filter
+      if (filterValue === currentFilter) {
+        // If clicking the same filter, clear it
+        clearFilter();
+        currentFilter = null;
+      } else {
+        // Apply new filter
+        applyFilter(filterValue);
+        currentFilter = filterValue;
+      }
+    }
+    
+    // Handle clicks on menu section background to clear filter
+    if (e.target.classList.contains('home-menu') || e.target.classList.contains('menu-line') || e.target.classList.contains('menu-separator')) {
+      clearFilter();
+      currentFilter = null;
+    }
+    
+    // Handle clicks on portfolio section background to clear filter
+    if (e.target.id === 'portfolio' || e.target.classList.contains('container') || e.target.classList.contains('row')) {
+      clearFilter();
+      currentFilter = null;
     }
   });
   
@@ -356,6 +379,122 @@ function initializeHomeMenu() {
     originalSetLanguage(lang);
     updateMenuItems();
   };
+  
+  // Filter functions
+  function applyFilter(filterValue) {
+    const portfolioItems = document.querySelectorAll('#portfolio .col-md-4');
+    const portfolioSection = document.getElementById('portfolio');
+    let visibleIndex = 0;
+    let matchingItems = [];
+    
+    // Step 1: Immediately hide all items and reset all styles
+    portfolioItems.forEach((item) => {
+      item.classList.remove('filtered-in', 'filtered-in-animation', 'restore-animation');
+      item.classList.add('filtered-out');
+      // Reset any inline styles that might interfere
+      item.style.animationDelay = '0s';
+      // item.style.transform = '';
+      item.style.opacity = 0;
+    });
+    
+    // Step 2: Start repositioning matching items immediately (while hiding)
+    portfolioItems.forEach((item) => {
+      const itemTag = item.getAttribute('data-tag');
+      if (itemTag === filterValue) {
+        matchingItems.push(item);
+        
+        // Calculate new position
+        const itemsPerRow = 3;
+        const row = Math.floor(visibleIndex / itemsPerRow);
+        const col = visibleIndex % itemsPerRow;
+        
+        // Calculate position based on Bootstrap grid
+        const itemWidth = 33.333333; // Bootstrap col-md-4 width percentage
+        const itemHeight = 300; // Approximate height
+        const rowSpacing = 32;
+        
+        const leftPosition = col * itemWidth;
+        const topPosition = row * (itemHeight + rowSpacing);
+        
+        // Set position and classes
+        item.style.left = leftPosition + '%';
+        item.style.top = topPosition + 'px';
+        item.classList.remove('filtered-out');
+        item.classList.add('filtered-in');
+        
+        visibleIndex++;
+      }
+    });
+    
+    // Step 3: Calculate matching items count and set portfolio height
+    const itemsPerRow = 3; // Bootstrap col-md-4 means 3 items per row
+    const rows = Math.ceil(matchingItems.length / itemsPerRow);
+    const itemHeight = 300; // Approximate height of each portfolio item
+    const rowSpacing = 32; // margin-top spacing
+    const marginTop = 32; // 每个项目的margin-top
+    const paddingTop = 32; // CSS中定义的padding-top
+    const paddingBottom = 120; // CSS中定义的padding-bottom
+    const newHeight = (rows * itemHeight) + ((rows - 1) * rowSpacing) + marginTop + paddingTop + paddingBottom;
+    
+    // Set portfolio section height immediately
+    portfolioSection.style.height = newHeight + 'px';
+    portfolioSection.style.transition = 'height 0.1s ease-in-out';
+    
+    // Step 4: Wait 500ms for complete hiding and repositioning
+    setTimeout(() => {
+      // Items are already positioned, add fadeInUp animation
+      matchingItems.forEach((item) => {
+        item.classList.add('filtered-in-animation');
+        item.style.opacity = '1';
+      });
+    }, 500);
+  }
+  
+  function clearFilter() {
+    const portfolioSection = document.getElementById('portfolio');
+    const portfolioItems = document.querySelectorAll('#portfolio .col-md-4');
+    
+    // Remove active state from all menu items
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Calculate original height for all items
+    const itemsPerRow = 3;
+    const rows = Math.ceil(portfolioItems.length / itemsPerRow);
+    const itemHeight = 300;
+    const rowSpacing = 32;
+    const marginTop = 32; // 每个项目的margin-top
+    const paddingTop = 32; // CSS中定义的padding-top
+    const paddingBottom = 120; // CSS中定义的padding-bottom
+    const originalHeight = (rows * itemHeight) + ((rows - 1) * rowSpacing) + marginTop + paddingTop + paddingBottom;
+    
+    // Reset portfolio section height
+    portfolioSection.style.height = originalHeight + 'px';
+    portfolioSection.style.transition = 'height 0.1s ease-in-out';
+    
+    // Show all portfolio items with fadeInUp animation
+    portfolioItems.forEach((item, index) => {
+      item.classList.remove('filtered-out', 'filtered-in', 'filtered-in-animation', 'restore-animation');
+      
+      // Reset position styles
+      item.style.left = '';
+      item.style.top = '';
+      item.style.position = '';
+      
+      // Force reflow to ensure class removal takes effect
+      item.offsetHeight;
+      
+      // Ensure all items start with opacity 0 for consistent animation
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      
+      // Add fadeInUp animation for restoration with slight delay to ensure reflow
+      setTimeout(() => {
+        item.classList.add('restore-animation');
+      }, 10);
+    });
+  }
 }
 
 // Update menu items based on current language

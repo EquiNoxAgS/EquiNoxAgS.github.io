@@ -449,6 +449,11 @@ a:hover, a:active, a:focus {
    Portfolio section              
 -----------------------------------------*/
 
+#portfolio {
+  transition: height 0.1s ease-in-out;
+  overflow: hidden;
+}
+
 #portfolio small {
   color: #000000;
   font-size: 10px;
@@ -460,6 +465,68 @@ a:hover, a:active, a:focus {
   position: relative;
   padding: 0;
   margin-top: 32px;
+}
+
+/* Portfolio filtering styles */
+#portfolio .col-md-4 {
+  transform: translateY(0);
+  position: relative;
+}
+
+#portfolio .col-md-4.filtered-out {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  transition: none;
+  visibility: hidden !important;
+}
+
+#portfolio .col-md-4.filtered-in {
+  opacity: 0;
+  transform: translateY(0);
+  height: auto;
+  width: 33.333333%;
+  margin-top: 0;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+/* Ensure filtered items maintain proper spacing */
+#portfolio .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Restoration animation for clearing filters */
+#portfolio .col-md-4.restore-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+/* Filter animation for switching tabs */
+#portfolio .col-md-4.filtered-in-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-in-out forwards;
 }
 
 #portfolio .portfolio-thumb img{
