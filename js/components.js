@@ -326,6 +326,50 @@ onDocumentReady(async function () {
   
   // Set initial language content
   setLanguage(initialLang);
+  
+  // Initialize home menu functionality
+  initializeHomeMenu();
 });
+
+// Home Menu functionality
+function initializeHomeMenu() {
+  // Handle menu item clicks and language switching
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('menu-item')) {
+      e.preventDefault();
+      
+      // Toggle active state
+      document.querySelectorAll('.menu-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      e.target.classList.add('active');
+      
+      // You can add specific actions for each menu item here
+      const text = e.target.textContent.trim();
+      console.log('Menu item clicked:', text);
+    }
+  });
+  
+  // Update menu items when language changes
+  const originalSetLanguage = setLanguage;
+  setLanguage = function(lang) {
+    originalSetLanguage(lang);
+    updateMenuItems();
+  };
+}
+
+// Update menu items based on current language
+function updateMenuItems() {
+  document.querySelectorAll('.menu-item').forEach(item => {
+    const textEn = item.getAttribute('data-text-en');
+    const textCn = item.getAttribute('data-text-cn');
+    
+    if (currentLanguage === 'cn' && textCn) {
+      item.textContent = textCn;
+    } else if (textEn) {
+      item.textContent = textEn;
+    }
+  });
+}
 
 

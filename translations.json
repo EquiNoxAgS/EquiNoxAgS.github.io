@@ -1,8 +1,8 @@
 {
   "en": {
-    "home": {
-      "name": "Liu Huilin | 刘慧琳",
-      "subtitle": "Architecture | CG & Coding | Illustration<br>UCLA AUD Suprastudio Technology | Zhejiang University B.Arch"
+    "menu": {
+      "subtitle": "Keeta | ByteDance | UCLA | ZJU",
+      "subtitle2": "Gameplay | CG Rendering | AR/VR | UI/UX | Architecture"
     },
     "gallery": {
       "title": "Other Works",
@@ -70,9 +70,9 @@
     }
   },
   "cn": {
-    "home": {
-      "name": "Liu Huilin | 刘慧琳",
-      "subtitle": "建筑学 | CG与编程 | 插画<br>加州大学洛杉矶分校 AUD Suprastudio Technology | 浙江大学 建筑学学士"
+    "menu": {
+      "subtitle": "美团｜字节｜UCLA | 浙江大学",
+      "subtitle2": "游戏玩法 | 图形渲染 | AR/VR | UI/UX | 建筑学"
     },
     "gallery": {
       "title": "其他作品",
