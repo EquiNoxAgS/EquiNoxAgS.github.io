@@ -9,40 +9,44 @@
       "subtitle": "ACGN doujin, fan-art, photograph, daily practice, survey drawing, etc."
     },
     "projects": {
-      "greenland": "Greenland: Data City",
-      "key": "Key Points",
-      "growth": "Shaping·Growth",
-      "enning": "Enning Memory",
-      "factory": "Factory Rebirth",
-      "library": "Mountain Library"
+      "greenland": "Greenland: Datacenter City",
+      "key": "Seize the Key",
+      "growth": "Trans.figure: Growth",
+      "enning": "En'ning Memory",
+      "factory": "The Second Life of the Factory",
+      "library": "Book Stage on the Hill"
     },
     "about": {
       "title": "About me",
-      "description": "Hi! I'm Liu Huilin, an architecture student with multiple interest in computational design, CG, illustration, and more...",
-      "cv_title": "Curriculum Vitae",
+      "description": "Hi! I'm Liu Huilin, My work spans multiple areas, including gameplay R&D, technical art, product design, and more...",
+      "cv_title": "Résumé",
       "career_title": "Career Experience",
       "education_title": "Education",
-      "skills_title": "Skills",
+      "skills_title": "Professional Skills",
       "comprehensive_title": "Comprehensive Abilities"
     },
     "career": {
       "bydance_title": "ByteDance Inc.",
       "douyin_live": "Douyin Live Intelligent Creation R&D",
-      "douyin_live_period": "July 2024 – Present",
-      "douyin_live_desc1": "Initiate the \"interactive effect\" capability for Douyin Live, which allows like and gift behaviors to affect the livestream screen. It reaches a maximum of 70,000+ anchors and an average daily revenue of 1 million+ CNY.",
-      "douyin_live_desc2": "Develop corresponding components and blueprint templates in Effect House tool, serving 300+ UGC artists to achieve efficient high-volume launch of such effects.",
+      "douyin_live_period": "July 2024 – Apr 2025",
+      "douyin_live_desc1": "Initiate the \"interactive effect\" capability for Douyin Live, which allows like and gift behaviors to affect the livestream screen.",
+      "douyin_live_desc2": "It reaches a maximum of 70,000+ anchors and an average daily revenue of 1 million+ CNY.",
+      "douyin_live_desc3": "Develop corresponding components and blueprint templates in Effect House tool, serving 300+ UGC artists to achieve efficient high-volume launch of such effects.",
+      "douyin_live_desc4": "Awarded the First Prize in Douyin Hackathon.",
       "interactive_engineer": "Interactive Engineer",
       "interactive_period": "March 2021 – July 2024",
-      "interactive_desc": "For ByteDance application products such as TikTok & CapCut, based on an internal self-developed engine, develop online visual effects, including shader editing, gameplay development, production efficiency improvement, performance optimization, etc."
+      "interactive_desc1": "For ByteDance application products such as TikTok CapCut, based on a internal self-developed engine, develop online visual effects",
+      "interactive_desc2": "Including shader editing, gameplay development, production efficiency improvement, performance optimization, etc.",
+      "interactive_desc3": "Supported: TikTok interactive games / AR exhibition / CapCut effect"
     },
     "education": {
       "ucla": "University of California, Los Angeles",
       "ucla_degree": "Master's degree, Suprastudio Technology",
-      "ucla_desc": "Architecture X Digital Media Intersection Program, Graduate with Distinction",
+      "ucla_desc": "Architecture X Digital Media Intersection Program<br>Graduate with Distinction",
       "ucla_period": "Aug 2019 – June 2020",
       "zju": "Zhejiang University",
       "zju_degree": "Bachelor's degree, Architecture",
-      "zju_gpa": "GPA: 3.84/4.00",
+      "zju_gpa": "GPA: 3.84 / 4.00",
       "zju_period": "Sep 2014 – June 2019"
     },
     "skills": {
@@ -58,7 +62,7 @@
     },
     "comprehensive": {
       "occupational": "Occupational Competence",
-      "occupational_skills": "Project Management<br>Communication & Collaboration<br>Decision Making<br>Lifelong Learning",
+      "occupational_skills": "Project Management<br>Communication Collaboration<br>Decision Making<br>Lifelong Learning",
       "knowledge": "Knowledge Domain",
       "knowledge_areas": "Digital Media<br>Interaction Design<br>Architecture<br>Audio Video Editing",
       "language": "Language Proficiency",
@@ -84,7 +88,7 @@
     },
     "about": {
       "title": "关于我",
-      "description": "你好！我是刘慧琳，一名对计算设计、CG、插画等多个领域感兴趣的架构师...",
+      "description": "你好！我是刘慧琳，我的工作涉及到游戏玩法研发、技术美术、产品设计等多个领域。",
       "cv_title": "简历",
       "career_title": "工作经历 Career Experience",
       "education_title": "教育经历 Education",
@@ -102,8 +106,8 @@
       "interactive_engineer": "智能创作中台: 交互工程师",
       "interactive_period": "2021/03 - 2024/07",
       "interactive_desc1": "针对字节跳动抖音、剪映等应用,基于内部自研引擎与视觉识别算法,开发AR视觉效果",
-      "interactive_desc2": "工作内容: Shader编辑、Gameplay玩法开发、工作流效率提升、线上性能优化等。",
-      "interactive_desc3": "支持项目包含: 抖音好友互动游戏/AR艺术展布展/剪映醒图人像特效研发"
+      "interactive_desc2": "工作内容: Shader编辑、Gameplay玩法开发、工作流效率提升、线上性能优化等",
+      "interactive_desc3": "支持项目: 抖音好友互动游戏/AR艺术展布展/剪映醒图人像特效研发"
     },
     "education": {
       "ucla": "加州大学洛杉矶分校 UCLA",
@@ -112,7 +116,7 @@
       "ucla_period": "2019/08 - 2020/06",
       "zju": "浙江大学 Zhejiang University",
       "zju_degree": "建筑学, 学士学位",
-      "zju_gpa": "GPA: 3.84/4.00",
+      "zju_gpa": "GPA: 3.84 / 4.00",
       "zju_period": "2014/09 - 2019/06"
     },
     "skills": {

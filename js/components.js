@@ -278,14 +278,36 @@ function onDocumentReady(callback) {
 }
 
 onDocumentReady(async function () {
-  // Load translations first
-  await loadTranslations();
+  // Render preloader first
+  renderIfExists("preloader-root", React.createElement(Preloader));
+  
+  // Load translations and render components in parallel
+  const [translationsLoaded] = await Promise.all([
+    loadTranslations(),
+    // Render navbar immediately
+    new Promise((resolve) => {
+      var navbarRoot = document.getElementById("navbar-root");
+      var active = navbarRoot && navbarRoot.dataset && navbarRoot.dataset.active ? navbarRoot.dataset.active : "";
+      var logoSrc = "resources/LOGO_MONO.svg";
+      if (navbarRoot) {
+        if (window.ReactDOM && ReactDOM.createRoot) {
+          ReactDOM.createRoot(navbarRoot).render(React.createElement(Navbar, { active: active, logo: logoSrc }));
+        } else if (window.ReactDOM && ReactDOM.render) {
+          ReactDOM.render(React.createElement(Navbar, { active: active, logo: logoSrc }), navbarRoot);
+        }
+      }
+      resolve();
+    }),
+    // Render footer immediately
+    new Promise((resolve) => {
+      renderIfExists("footer-root", React.createElement(Footer));
+      resolve();
+    })
+  ]);
   
   // Set initial language
   const initialLang = getCurrentLanguage();
   currentLanguage = initialLang;
-  
-  renderIfExists("preloader-root", React.createElement(Preloader));
   
   // Create language switcher container if it doesn't exist
   var langSwitcherContainer = document.getElementById("language-switcher-root");
@@ -294,18 +316,6 @@ onDocumentReady(async function () {
     langSwitcherContainer.id = "language-switcher-root";
     document.body.appendChild(langSwitcherContainer);
   }
-  
-  var navbarRoot = document.getElementById("navbar-root");
-  var active = navbarRoot && navbarRoot.dataset && navbarRoot.dataset.active ? navbarRoot.dataset.active : "";
-  var logoSrc = "resources/LOGO_MONO.svg";
-  if (navbarRoot) {
-    if (window.ReactDOM && ReactDOM.createRoot) {
-      ReactDOM.createRoot(navbarRoot).render(React.createElement(Navbar, { active: active, logo: logoSrc }));
-    } else if (window.ReactDOM && ReactDOM.render) {
-      ReactDOM.render(React.createElement(Navbar, { active: active, logo: logoSrc }), navbarRoot);
-    }
-  }
-  renderIfExists("footer-root", React.createElement(Footer));
   
   // Render language switcher
   if (window.ReactDOM && ReactDOM.createRoot) {

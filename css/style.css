@@ -143,6 +143,12 @@ a:hover, a:active, a:focus {
   background: none repeat scroll 0 0 #ffffff;
 }
 
+/* Hide navbar and footer roots until they are rendered */
+#navbar-root:empty,
+#footer-root:empty {
+  display: none;
+}
+
 
 .sk-spinner-wordpress.sk-spinner {
   background-color: #ffffff;
@@ -309,6 +315,48 @@ a:hover, a:active, a:focus {
   width: 44.44444444%;
   max-width: 44.44444444%;
 }
+
+/* Custom layout for about page two-column sections */
+#about .row.two-column-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#about .row.two-column-layout .col-md-6:first-child {
+  flex: 0 0 auto;
+  width: 44.44444444%;
+  margin-right: 0;
+}
+
+#about .row.two-column-layout .col-md-6:last-child {
+  flex: 0 0 auto;
+  width: 44.44444444%;
+  margin-left: auto;
+}
+
+/* Adjust two-column layout in comprehensive abilities section */
+#about .col-md-6 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#about .col-md-6 .row .col-md-6 {
+  width: 48%;
+  flex: 0 0 48%;
+  padding-right: 2%;
+}
+
+#about .col-md-6 .row .col-md-6:last-child {
+  padding-right: 0;
+}
+
+/* Increase line spacing for <h4> tags with <br> tags in comprehensive abilities section */
+#about .col-md-6 .row .col-md-6 h4 {
+  line-height: 18px; /* 3/2 of 12px = 18px */
+}
+
 
 #about .col-md-8 img {
   padding-right: 22px;
