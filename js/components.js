@@ -107,7 +107,7 @@ function LanguageSwitcher() {
 
 function Navbar(props) {
   var active = props.active || "";
-  var logoSrc = "images/LOGO_MONO.svg";
+  var logoSrc = "resources/LOGO_MONO.svg";
   
   // Set navigation text based on current language
   const navText = {
@@ -129,12 +129,12 @@ function Navbar(props) {
           "a",
           { href: "index.html", className: "navbar-brand-link" },
           React.createElement("img", { 
-            src: "images/LOGO_MONO.svg", 
+            src: "resources/LOGO_MONO.svg", 
             className: "navbar-logo navbar-logo-mono",
             alt: "Logo"
           }),
           React.createElement("img", { 
-            src: "images/LOGO_CHROME.svg", 
+            src: "resources/LOGO_CHROME.svg", 
             className: "navbar-logo navbar-logo-chrome",
             alt: "Logo"
           })
@@ -297,7 +297,7 @@ onDocumentReady(async function () {
   
   var navbarRoot = document.getElementById("navbar-root");
   var active = navbarRoot && navbarRoot.dataset && navbarRoot.dataset.active ? navbarRoot.dataset.active : "";
-  var logoSrc = "images/LOGO_MONO.svg";
+  var logoSrc = "resources/LOGO_MONO.svg";
   if (navbarRoot) {
     if (window.ReactDOM && ReactDOM.createRoot) {
       ReactDOM.createRoot(navbarRoot).render(React.createElement(Navbar, { active: active, logo: logoSrc }));
