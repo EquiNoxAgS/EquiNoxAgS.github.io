@@ -8,6 +8,15 @@
       "subtitle": "ACGN doujin, fan-art, photograph, daily practice, survey drawing, etc."
     },
     "projects": {
+      "hotpot_agent": "Hotpot Agent",
+      "douyin_mv": "Douyin Live: MV Effect",
+      "douyin_interactive": "Douyin Live: Interactive Game",
+      "effect_house": "Effect house: AI Normal Texture",
+      "fluid_simulation": "Fluid Simulation",
+      "vps_effect": "VPS Effect",
+      "ar_exhibition": "AR Art Exhibition",
+      "particle_dissolve": "Particle Dissolve",
+      "motion_graph": "Motion Graph",
       "greenland": "Greenland: Datacenter City",
       "key": "Seize the Key",
       "growth": "Trans.figure: Growth",
@@ -66,6 +75,12 @@
       "knowledge_areas": "Digital Media<br>Interaction Design<br>Architecture<br>Audio Video Editing",
       "language": "Language Proficiency",
       "languages": "Chinese<br>English<br>Japanese"
+    },
+    "password": {
+      "title": "Please Enter Access Password",
+      "placeholder": "Password",
+      "confirm": "Enter",
+      "error": "Incorrect password, please try again"
     }
   },
   "cn": {
@@ -78,6 +93,15 @@
       "subtitle": "ACGN同人、粉丝作品、摄影、日常练习、调研绘图等。"
     },
     "projects": {
+      "hotpot_agent": "Hotpot Agent",
+      "douyin_mv": "抖音直播: MV特效",
+      "douyin_interactive": "抖音直播: 互动游戏",
+      "effect_house": "Effect house: 智能人像打光",
+      "fluid_simulation": "流体模拟",
+      "vps_effect": "大场景VPS",
+      "ar_exhibition": "AR展馆",
+      "particle_dissolve": "粒子消散",
+      "motion_graph": "人体动效",
       "greenland": "格陵兰岛：数据之城",
       "key": "执其关键",
       "growth": "塑造·增长",
@@ -136,6 +160,12 @@
       "knowledge_areas": "数字媒体<br>交互设计<br>建筑设计<br>音视频编辑",
       "language": "语言能力",
       "languages": "中文 (母语) <br>英语 (无障碍沟通)<br>日本语 (日常会话)"
+    },
+    "password": {
+      "title": "请输入访问密码",
+      "placeholder": "请输入密码",
+      "confirm": "确认",
+      "error": "密码错误，请重试"
     }
   }
 }

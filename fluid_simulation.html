@@ -15,14 +15,18 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+<!-- Password Protection Container -->
+<div id="password-protection-container"></div>
 </head>
 <body>
 <!-- PRE LOADER -->
 <div id="preloader-root"></div>
 <!-- Navigation section  -->
 <div id="navbar-root" data-active="projects" data-logo="final"></div>
+
+
 <!-- Single Project Section -->
-<section id="single-project">
+<section id="single-project" class="password-protected">
      <div class="container animated fadeInUp">
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12 brief">
@@ -47,5 +51,14 @@
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="js/components.js"></script>
+
+<script>
+// 页面加载完成后隐藏加载器
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.getElementById('preloader-root').style.display = 'none';
+    }, 1000);
+});
+</script>
 </body>
 </html>

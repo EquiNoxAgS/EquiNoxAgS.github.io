@@ -511,4 +511,342 @@ function updateMenuItems() {
   });
 }
 
+// Password Protection Component
+class PasswordProtection {
+  constructor(options = {}) {
+    this.password = options.password || '210322';
+    this.targetSelector = options.targetSelector || '#single-project';
+    this.containerId = options.containerId || 'password-overlay';
+    
+    this.init();
+  }
+
+  init() {
+    this.addStyles();
+    this.createPasswordOverlay();
+    this.bindEvents();
+    this.applyTranslations();
+    this.addProtectionMeasures();
+  }
+
+  addStyles() {
+    // Styles are now injected immediately when script loads
+    // This method is kept for compatibility but does nothing
+  }
+
+  createPasswordOverlay() {
+    if (document.getElementById(this.containerId)) return;
+
+    const overlay = `
+      <div id="${this.containerId}" class="password-overlay">
+        <div class="password-container">
+          <h4 data-i18n="password.title">请输入访问密码</h4>
+          <input type="password" id="password-input" data-i18n-placeholder="password.placeholder" placeholder="请输入密码" />
+          <button onclick="window.passwordProtection.checkPassword()" data-i18n="password.confirm">Enter</button>
+          <div id="error-message" class="error-message" style="display: none;" data-i18n="password.error">密码错误，请重试</div>
+        </div>
+      </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', overlay);
+  }
+
+  bindEvents() {
+    const passwordInput = document.getElementById('password-input');
+    if (passwordInput) {
+      passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          this.checkPassword();
+        }
+      });
+    }
+  }
+
+  applyTranslations() {
+    // Apply translations when they become available
+    const applyTranslationsToPassword = () => {
+      const passwordElements = document.querySelectorAll('[data-i18n^="password"]');
+      passwordElements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const placeholderKey = element.getAttribute('data-i18n-placeholder');
+        
+        if (key && translations[currentLanguage]?.password?.[key.split('.')[1]]) {
+          element.textContent = translations[currentLanguage].password[key.split('.')[1]];
+        }
+        if (placeholderKey && translations[currentLanguage]?.password?.[placeholderKey.split('.')[1]]) {
+          element.placeholder = translations[currentLanguage].password[placeholderKey.split('.')[1]];
+        }
+      });
+    };
+
+    // Apply translations immediately if available
+    if (Object.keys(translations).length > 0) {
+      applyTranslationsToPassword();
+    }
+
+    // Apply translations when language changes
+    const originalSetLanguage = window.setLanguage;
+    window.setLanguage = (lang) => {
+      originalSetLanguage(lang);
+      setTimeout(applyTranslationsToPassword, 100);
+    };
+
+    // Also listen for translation updates from the main translation system
+    const checkForTranslations = () => {
+      if (Object.keys(translations).length > 0) {
+        applyTranslationsToPassword();
+      } else {
+        setTimeout(checkForTranslations, 100);
+      }
+    };
+    checkForTranslations();
+  }
+
+  checkPassword() {
+    const passwordInput = document.getElementById('password-input');
+    const errorMessage = document.getElementById('error-message');
+    
+    if (!passwordInput || !errorMessage) return;
+
+    const inputPassword = passwordInput.value;
+    
+    if (inputPassword === this.password) {
+      // Remove password protection
+      document.getElementById(this.containerId).style.display = 'none';
+      document.querySelector(this.targetSelector).classList.remove('password-protected');
+      
+      // Load protected content after password verification
+      this.loadProtectedContent();
+    } else {
+      // Show error message
+      errorMessage.style.display = 'block';
+      passwordInput.value = '';
+    }
+  }
+
+  loadProtectedContent() {
+    // Show protected content sections
+    const protectedSections = document.querySelectorAll('.protected-content');
+    protectedSections.forEach(section => {
+      section.style.display = 'block';
+    });
+
+    // Replace placeholder images with actual content
+    const protectedImages = document.querySelectorAll('img[data-protected-src]');
+    protectedImages.forEach(img => {
+      const actualSrc = img.getAttribute('data-protected-src');
+      if (actualSrc) {
+        img.src = actualSrc;
+        img.removeAttribute('data-protected-src');
+      }
+    });
+
+    // Replace placeholder videos with actual content
+    const protectedVideoSources = document.querySelectorAll('source[data-protected-src]');
+    protectedVideoSources.forEach(source => {
+      const actualSrc = source.getAttribute('data-protected-src');
+      if (actualSrc) {
+        source.src = actualSrc;
+        source.removeAttribute('data-protected-src');
+        // Reload the video element
+        const video = source.parentElement;
+        if (video && video.tagName === 'VIDEO') {
+          video.load();
+        }
+      }
+    });
+  }
+
+  show() {
+    document.getElementById(this.containerId).style.display = 'flex';
+    document.querySelector(this.targetSelector).classList.add('password-protected');
+  }
+
+  hide() {
+    document.getElementById(this.containerId).style.display = 'none';
+    document.querySelector(this.targetSelector).classList.remove('password-protected');
+  }
+
+  addProtectionMeasures() {
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable common keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+      if (e.keyCode === 123 || // F12
+          (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
+          (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable drag and drop
+    document.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable text selection
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+      return false;
+    });
+
+    // Detect developer tools (basic detection)
+    let devtools = {open: false, orientation: null};
+    setInterval(function() {
+      if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        if (!devtools.open) {
+          devtools.open = true;
+          // Optionally redirect or show warning
+          console.clear();
+          console.log('%cWarning: Developer tools detected!', 'color: red; font-size: 20px;');
+        }
+      } else {
+        devtools.open = false;
+      }
+    }, 500);
+
+    // Clear console periodically
+    setInterval(function() {
+      console.clear();
+    }, 1000);
+  }
+}
+
+// Inject styles immediately when script loads (before DOMContentLoaded)
+(function() {
+  // Remove existing styles first to allow updates
+  const existingStyles = document.getElementById('password-protection-styles');
+  if (existingStyles) {
+    existingStyles.remove();
+  }
+
+  const styles = `
+    <style id="password-protection-styles">
+      .password-protected {
+        filter: blur(10px);
+        pointer-events: none;
+        user-select: none;
+      }
+      .password-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        pointer-events: none;
+      }
+      .password-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        pointer-events: auto;
+      }
+      .password-overlay .password-container h4 {
+        margin: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .password-overlay .password-container input {
+        width: 200px;
+        height: 30px;
+        padding: 0 20px !important;
+        border: 2px solid #ddd;
+        border-radius: 15px;
+        font-size: 16px;
+        text-align: center;
+        background: white;
+        color: #333;
+        transition: all 0.3s ease;
+        margin: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .password-overlay .password-container input::placeholder {
+        color: #999 !important;
+      }
+      .password-overlay .password-container input:focus {
+        outline: none;
+        border-color: #ddd;
+        border-width: 3px;
+        background: white;
+      }
+      .password-overlay .password-container button {
+        background: white;
+        color: #333;
+        height: 30px;
+        padding: 0 20px;
+        margin: 3px;
+        border: 1px solid #333;
+        border-radius: 15px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        box-shadow: none;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .password-overlay .password-container button:hover {
+        background: #f8f9fa !important;
+        border-color: #999 !important;
+        transform: translateY(-2px) !important;
+        color: #333 !important;
+      }
+      .password-overlay .password-container button:focus {
+        background: #f8f9fa !important;
+        border-color: #999 !important;
+        color: #333 !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+      .password-overlay .password-container button:active {
+        background: #f8f9fa !important;
+        border-color: #999 !important;
+        color: #333 !important;
+        box-shadow: none !important;
+      }
+      .error-message {
+        color: #dc3545;
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: center;
+      }
+    </style>
+  `;
+
+  // Insert styles immediately
+  document.head.insertAdjacentHTML('beforeend', styles);
+})();
+
+// Initialize password protection when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Auto-initialize if password-protection-container exists
+  if (document.getElementById('password-protection-container')) {
+    window.passwordProtection = new PasswordProtection({
+      targetSelector: '#single-project'
+    });
+  }
+});
+
+// Export for manual initialization
+window.PasswordProtection = PasswordProtection;
 
