@@ -81,6 +81,52 @@
       "placeholder": "Password",
       "confirm": "Enter",
       "error": "Incorrect password, please try again"
+    },
+    "library": {
+      "title": "Book Stage on the Hill",
+      "course": "2017 Zhejiang University Architecture Core Studio",
+      "type": "Architectural Design Project",
+      "collaborators": "Groupmates: Yang Wenyun, Sun shaoqi",
+      "supervisor": "Supervisor: Chen Xiang"
+    },
+    "factory": {
+      "title": "The Second Life of the Factory",
+      "course": "2018 Zhejiang University Architecture Core Studio",
+      "award": "\"Revit Cup\" Finalist Award",
+      "type": "Architectural Design Project",
+      "supervisor": "Supervisor: Chen Xiang"
+    },
+    "enning": {
+      "title": "En'ning Memory",
+      "course": "2018 \"Digital Heritage\" Workshop",
+      "type": "Research Project",
+      "collaborators": "Groupmates: Liu Ruijun, Xu xiaohan, Gong Shutai",
+      "supervisors": "Supervisors: Takehiko Nagakura, Zhang Xu, Liu Chang",
+      "tools": "Tools: Photogrammetry, Unity AR&VR"
+    },
+    "growth": {
+      "title": "Trans.figure: Growth",
+      "course": "2019 Summer UCLA AUD Suprastudio Summer Session",
+      "type": "Multi-media Design Project",
+      "collaborators": "Groupmates: Yeawon Min, Nan Tse-su, Alekya Malladi",
+      "tools": "Tools: Maya, C4D, Rhino, Unity AR&VR, Adobe After Effect, 3D Printing"
+    },
+    "key": {
+      "title": "Seize the Key",
+      "course": "2019 Summer UCLA AUD Suprastudio Summer Session",
+      "subtitle": "\"Immersive World Building\"",
+      "type": "Multi-media Design Project",
+      "supervisors": "Supervisors: Ozel Guvenc, Benjamin Ennemoser",
+      "tools": "Tools: MagicalVoxel, Unity VR"
+    },
+    "greenland": {
+      "title": "Greenland: Datacenter City",
+      "course": "2020 Spring UCLA AUD Suprastudio Technology Core Studio",
+      "subtitle": "\"Deep Urbanism: Technocritical Architectural Narratives for Human/ Machine Society\"",
+      "type": "Design & Research Project",
+      "collaborators": "Groupmates: Xie Wei, Zhang Xiaoman",
+      "supervisors": "Supervisors: Ozel Guvenc, Benjamin Ennemoser",
+      "tools": "Tools: Pix2pix&CycleGAN, Rhino, Unreal Engine 4, Unity, AR&VR, Adobe After Effect"
     }
   },
   "cn": {
@@ -166,6 +212,52 @@
       "placeholder": "请输入密码",
       "confirm": "确认",
       "error": "密码错误，请重试"
+    },
+    "library": {
+      "title": "山中书台",
+      "course": "2017 浙江大学建筑学设计课",
+      "type": "建筑设计项目",
+      "collaborators": "合作者：杨文韵，孙少奇",
+      "supervisor": "指导者：陈翔"
+    },
+    "factory": {
+      "title": "工厂重生",
+      "course": "2018 浙江大学建筑学设计课",
+      "award": "\"谷雨杯\"入围奖",
+      "type": "建筑设计项目",
+      "supervisor": "指导者：陈翔"
+    },
+    "enning": {
+      "title": "恩宁记忆",
+      "course": "2018 \"数字遗产\"工作坊",
+      "type": "自主研究项目",
+      "collaborators": "合作者：刘瑞珺，许潇涵，宫舒泰",
+      "supervisors": "指导者：Takehiko Nagakura，张旭，刘畅",
+      "tools": "工具：Photogrammetry, Unity AR&VR"
+    },
+    "growth": {
+      "title": "塑造·增长",
+      "course": "2019 UCLA Suprastudio 夏学期",
+      "type": "多媒体设计项目",
+      "collaborators": "合作者：Yeawon Min, Nan Tse-su, Alekya Malladi",
+      "tools": "涉及工具：Maya, C4D, Rhino, Unity AR&VR, Adobe After Effect, 3D打印"
+    },
+    "key": {
+      "title": "执其关键",
+      "course": "2019 UCLA Suprastudio 夏学期",
+      "subtitle": "\"沉浸式世界构建\"",
+      "type": "多媒体设计项目",
+      "supervisors": "指导者：Ozel Guvenc, Benjamin Ennemoser",
+      "tools": "涉及工具：MagicalVoxel, Unity VR"
+    },
+    "greenland": {
+      "title": "格陵兰岛: 数据之城",
+      "course": "2020 UCLA Suprastudio 春学期",
+      "subtitle": "\"深度城市化：人机社会的技术批判建筑叙事\"",
+      "type": "设计研究项目",
+      "collaborators": "合作者：谢纬，张小曼",
+      "supervisors": "指导者：Ozel Guvenc, Benjamin Ennemoser",
+      "tools": "涉及工具：Pix2pix&CycleGAN, Rhino, Unreal Engine 4, Unity, AR&VR, Adobe After Effect"
     }
   }
 }

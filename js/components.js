@@ -384,116 +384,131 @@ function initializeHomeMenu() {
   function applyFilter(filterValue) {
     const portfolioItems = document.querySelectorAll('#portfolio .col-md-4');
     const portfolioSection = document.getElementById('portfolio');
-    let visibleIndex = 0;
     let matchingItems = [];
     
-    // Step 1: Immediately hide all items and reset all styles
+    // Prevent layout shift by maintaining scrollbar
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    body.style.paddingRight = scrollbarWidth + 'px';
+    body.style.overflow = 'hidden';
+    
+    // Step 1: Hide all items first to prevent layout jumps
     portfolioItems.forEach((item) => {
-      item.classList.remove('filtered-in', 'filtered-in-animation', 'restore-animation');
-      item.classList.add('filtered-out');
-      // Reset any inline styles that might interfere
-      item.style.animationDelay = '0s';
-      // item.style.transform = '';
-      item.style.opacity = 0;
+      item.style.opacity = '0';
+      item.style.display = 'none';
     });
     
-    // Step 2: Start repositioning matching items immediately (while hiding)
-    portfolioItems.forEach((item) => {
-      const itemTag = item.getAttribute('data-tag');
-      if (itemTag === filterValue) {
-        matchingItems.push(item);
-        
-        // Calculate new position
-        const itemsPerRow = 3;
-        const row = Math.floor(visibleIndex / itemsPerRow);
-        const col = visibleIndex % itemsPerRow;
-        
-        // Calculate position based on Bootstrap grid
-        const itemWidth = 33.333333; // Bootstrap col-md-4 width percentage
-        const itemHeight = 300; // Approximate height
-        const rowSpacing = 32;
-        
-        const leftPosition = col * itemWidth;
-        const topPosition = row * (itemHeight + rowSpacing);
-        
-        // Set position and classes
-        item.style.left = leftPosition + '%';
-        item.style.top = topPosition + 'px';
-        item.classList.remove('filtered-out');
-        item.classList.add('filtered-in');
-        
-        visibleIndex++;
+     // Step 2: Collect matching items and reset their styles
+     portfolioItems.forEach((item) => {
+       const itemTags = item.getAttribute('data-tag');
+       // Support multiple tags separated by commas
+       const tagArray = itemTags ? itemTags.split(',').map(tag => tag.trim()) : [];
+       if (tagArray.includes(filterValue)) {
+         matchingItems.push(item);
+        // Remove any filter classes and reset styles
+        item.classList.remove('filtered-out', 'filtered-in', 'filtered-in-animation', 'restore-animation');
+        // Reset all inline styles
+        item.style.left = '';
+        item.style.top = '';
+        item.style.position = '';
+        item.style.width = '';
+        item.style.height = '';
+        item.style.marginTop = '';
+        item.style.margin = '';
+        item.style.padding = '';
+        item.style.overflow = '';
+        item.style.visibility = '';
+        item.style.animationDelay = '';
+        item.style.transition = '';
+      } else {
+        // Mark non-matching items as filtered out
+        item.classList.add('filtered-out');
       }
     });
     
-    // Step 3: Calculate matching items count and set portfolio height
-    const itemsPerRow = 3; // Bootstrap col-md-4 means 3 items per row
-    const rows = Math.ceil(matchingItems.length / itemsPerRow);
-    const itemHeight = 300; // Approximate height of each portfolio item
-    const rowSpacing = 32; // margin-top spacing
-    const marginTop = 32; // 每个项目的margin-top
-    const paddingTop = 32; // CSS中定义的padding-top
-    const paddingBottom = 120; // CSS中定义的padding-bottom
-    const newHeight = (rows * itemHeight) + ((rows - 1) * rowSpacing) + marginTop + paddingTop + paddingBottom;
-    
-    // Set portfolio section height immediately
-    portfolioSection.style.height = newHeight + 'px';
-    portfolioSection.style.transition = 'height 0.1s ease-in-out';
-    
-    // Step 4: Wait 500ms for complete hiding and repositioning
+    // Step 3: Show matching items with fadeInUp animation
+    // Use a small delay to ensure DOM is ready and prevent layout jumps
     setTimeout(() => {
-      // Items are already positioned, add fadeInUp animation
       matchingItems.forEach((item) => {
-        item.classList.add('filtered-in-animation');
-        item.style.opacity = '1';
+        item.style.display = '';
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
       });
-    }, 500);
+      
+      // Add fadeInUp animation to all items simultaneously
+      setTimeout(() => {
+        matchingItems.forEach((item) => {
+          item.style.transition = 'opacity 0.6s ease-in-out, transform 0.6s ease-in-out';
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        });
+        
+        // Restore scrollbar after animation starts
+        setTimeout(() => {
+          body.style.paddingRight = '';
+          body.style.overflow = '';
+        }, 100);
+      }, 50);
+    }, 50);
   }
   
   function clearFilter() {
     const portfolioSection = document.getElementById('portfolio');
     const portfolioItems = document.querySelectorAll('#portfolio .col-md-4');
     
+    // Prevent layout shift by maintaining scrollbar
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    body.style.paddingRight = scrollbarWidth + 'px';
+    body.style.overflow = 'hidden';
+    
     // Remove active state from all menu items
     document.querySelectorAll('.menu-item').forEach(item => {
       item.classList.remove('active');
     });
     
-    // Calculate original height for all items
-    const itemsPerRow = 3;
-    const rows = Math.ceil(portfolioItems.length / itemsPerRow);
-    const itemHeight = 300;
-    const rowSpacing = 32;
-    const marginTop = 32; // 每个项目的margin-top
-    const paddingTop = 32; // CSS中定义的padding-top
-    const paddingBottom = 120; // CSS中定义的padding-bottom
-    const originalHeight = (rows * itemHeight) + ((rows - 1) * rowSpacing) + marginTop + paddingTop + paddingBottom;
-    
-    // Reset portfolio section height
-    portfolioSection.style.height = originalHeight + 'px';
-    portfolioSection.style.transition = 'height 0.1s ease-in-out';
+    // Remove any inline height from portfolio section
+    portfolioSection.style.height = '';
+    portfolioSection.style.transition = '';
     
     // Show all portfolio items with fadeInUp animation
-    portfolioItems.forEach((item, index) => {
+    portfolioItems.forEach((item) => {
       item.classList.remove('filtered-out', 'filtered-in', 'filtered-in-animation', 'restore-animation');
       
-      // Reset position styles
+      // Reset all inline styles
+      item.style.display = '';
       item.style.left = '';
       item.style.top = '';
       item.style.position = '';
+      item.style.width = '';
+      item.style.height = '';
+      item.style.marginTop = '';
+      item.style.margin = '';
+      item.style.padding = '';
+      item.style.overflow = '';
+      item.style.visibility = '';
+      item.style.animationDelay = '';
+      item.style.transition = '';
       
-      // Force reflow to ensure class removal takes effect
-      item.offsetHeight;
-      
-      // Ensure all items start with opacity 0 for consistent animation
+      // Start with opacity 0 for animation
       item.style.opacity = '0';
       item.style.transform = 'translateY(20px)';
-      
-      // Add fadeInUp animation for restoration with slight delay to ensure reflow
-      setTimeout(() => {
-        item.classList.add('restore-animation');
-      }, 10);
     });
+    
+    // Add fadeInUp animation to all items simultaneously
+    setTimeout(() => {
+      portfolioItems.forEach((item) => {
+        item.style.transition = 'opacity 0.6s ease-in-out, transform 0.6s ease-in-out';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      });
+      
+      // Restore scrollbar after animation starts
+      setTimeout(() => {
+        body.style.paddingRight = '';
+        body.style.overflow = '';
+      }, 100);
+    }, 50);
   }
 }
 
