@@ -55,6 +55,9 @@ function setLanguage(lang) {
   if (activeBtn) {
     activeBtn.classList.add('active');
   }
+  
+  // Trigger custom event for React components to listen to
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 }
 
 // Switch language function
@@ -78,6 +81,10 @@ function LanguageSwitcher() {
   const [currentLang, setCurrentLang] = React.useState(currentLanguage);
   
   const switchLanguage = (lang) => {
+    // 如果点击的是当前语言，则不执行任何操作
+    if (lang === currentLang) {
+      return;
+    }
     setCurrentLang(lang);
     window.switchLanguage(lang);
   };
@@ -107,14 +114,31 @@ function LanguageSwitcher() {
 
 function Navbar(props) {
   var active = props.active || "";
-  var logoSrc = "resources/LOGO_MONO.svg";
+  var logoSrc = "images/LOGO_MONO.svg";
+  
+  // Use React state to track current language for reactivity
+  const [currentLang, setCurrentLang] = React.useState(currentLanguage);
   
   // Set navigation text based on current language
   const navText = {
-    projects: currentLanguage === 'cn' ? '项目' : 'Projects',
-    gallery: currentLanguage === 'cn' ? '画廊' : 'Gallery',
-    resume: currentLanguage === 'cn' ? '简历' : 'Resume'
+    projects: currentLang === 'cn' ? '项目' : 'Projects',
+    gallery: currentLang === 'cn' ? '画廊' : 'Gallery',
+    resume: currentLang === 'cn' ? '关于我' : 'Resume'
   };
+  
+  // Listen for language changes
+  React.useEffect(() => {
+    const handleLanguageChange = () => {
+      setCurrentLang(currentLanguage);
+    };
+    
+    // Listen for custom language change event
+    window.addEventListener('languageChanged', handleLanguageChange);
+    
+    return () => {
+      window.removeEventListener('languageChanged', handleLanguageChange);
+    };
+  }, []);
   
   return React.createElement(
     "nav",
@@ -396,14 +420,14 @@ function initializeHomeMenu() {
       }
     }
     
-    // Handle clicks on menu section background to clear filter
-    if (e.target.classList.contains('home-menu') || e.target.classList.contains('menu-line') || e.target.classList.contains('menu-separator')) {
+    // Handle clicks on menu section background to clear filter (only if filter is active)
+    if (currentFilter && (e.target.classList.contains('home-menu') || e.target.classList.contains('menu-line') || e.target.classList.contains('menu-separator'))) {
       clearFilter();
       currentFilter = null;
     }
     
-    // Handle clicks on portfolio section background to clear filter
-    if (e.target.id === 'portfolio' || e.target.classList.contains('container') || e.target.classList.contains('row')) {
+    // Handle clicks on portfolio section background to clear filter (only if filter is active)
+    if (currentFilter && (e.target.id === 'portfolio' || e.target.classList.contains('container') || e.target.classList.contains('row'))) {
       clearFilter();
       currentFilter = null;
     }

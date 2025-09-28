@@ -141,6 +141,13 @@
       "company": "@ByteDance 2023",
       "subtitle": "Graphics Personal Practice",
       "pdf_title": "Simple and Easy-to-Understand Fluid Simulation Implementation.pdf"
+    },
+    "douyin_interactive": {
+      "title": "Douyin Live: Interactive Game",
+      "company": "@ByteDance 2024",
+      "subtitle1": "Developed douyin live interactive games where audience likes and gift behaviors affect live streaming visuals or game results.",
+      "subtitle2": "This feature reached a maximum of 70,000+ streamers and generated daily revenue of 1 million+ CNY",
+      "pdf_title": "Interactive Music Game Development Key Points: Taiko as Example.pdf"
     }
   },
   "cn": {
@@ -285,6 +292,13 @@
       "company": "@ByteDance 2023",
       "subtitle": "图形学 个人练习",
       "pdf_title": "简单易懂的流体模拟实现.pdf"
+    },
+    "douyin_interactive": {
+      "title": "抖音直播: 互动游戏",
+      "company": "@ByteDance 2024",
+      "subtitle1": "在抖音直播板块，研发观众点赞、送礼行为对直播画面或游戏结果产生影响的互动小游戏；",
+      "subtitle2": "该功能使用主播数量最多达到7w+，日均营收多达100w+ CNY",
+      "pdf_title": "互动音乐类游戏研发要点总结：太鼓达人为例.pdf"
     }
   }
 }

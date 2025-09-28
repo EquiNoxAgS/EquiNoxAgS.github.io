@@ -15,8 +15,6 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
-<!-- Password Protection Container -->
-<div id="password-protection-container"></div>
 </head>
 <body>
 <!-- PRE LOADER -->
@@ -26,7 +24,7 @@
 
 
 <!-- Single Project Section -->
-<section id="single-project" class="password-protected">
+<section id="single-project">
      <div class="container animated fadeInUp">
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12 brief">
@@ -36,24 +34,20 @@
                     <p data-i18n="fluid_simulation.subtitle">图形学 个人练习</p>
                     <br>
                     <br>
-                    <!-- Protected content - only loads after password verification -->
-                    <div class="protected-content" style="display: none;">
-                         <div class="row center-block col-md-12 col-sm-12 my-3">
-                              <div class="col-md-6 col-sm-6 py-0">
-                                   <div class="embed-responsive embed-responsive-4by3" style="transform: scale(1.5); transform-origin: center; margin: 20px;">
-                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop">
-                                             <source src="resources/placeholder.mp4" 
-                                                     data-protected-src="resources/fluid_simulation/Fluid_1.mov" 
+                         <div class="row center-block col-md-12 col-sm-12 p-0">
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0" style="margin-bottom: 50px;">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop" muted>
+                                             <source src="resources/fluid_simulation/Fluid_1.mov" 
                                                      type="video/mp4">
                                         </video>
                                    </div>
                               </div>
 
-                              <div class="col-md-6 col-sm-6 py-0">
-                                   <div class="embed-responsive embed-responsive-4by3" style="transform: scale(1.5); transform-origin: center; margin: 20px;">
-                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop">
-                                             <source src="resources/placeholder.mp4" 
-                                                     data-protected-src="resources/fluid_simulation/Fluid_2.mov" 
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0" style="margin-bottom: 50px;">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop" muted>
+                                             <source src="resources/fluid_simulation/Fluid_2.mov" 
                                                      type="video/mp4">
                                         </video>
                                    </div>
@@ -61,7 +55,7 @@
                          </div>
                          <br>
 
-                         <div class="row center-block col-md-12 col-sm-12 my-3">
+                         <div class="row center-block col-md-12 col-sm-12 p-0">
                               <div class="text-center">
                                    <a href="resources/fluid_simulation/简单易懂的流体模拟实现.pdf" 
                                       target="_blank" 
@@ -73,7 +67,6 @@
                                    </a>
                               </div>
                          </div>
-                    </div>
                </div>
           </div>
      </div>
