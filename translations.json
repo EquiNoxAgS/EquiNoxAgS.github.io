@@ -142,12 +142,28 @@
       "subtitle": "Graphics Personal Practice",
       "pdf_title": "Simple and Easy-to-Understand Fluid Simulation Implementation.pdf"
     },
+    "douyin_mv": {
+      "title": "Douyin Live: MV Effect",
+      "company": "@ByteDance 2024",
+      "subtitle": "Led the development of visual effects that synchronize with music for singing and dancing talent streamers in Douyin Live;<br>Opened atomic visual effects to UGC creators, enabling users to DIY and launch this live streaming effect in large quantities"
+    },
+    "eh_light": {
+      "title": "Effect house: AI Normal Texture",
+      "company": "@ByteDance 2024",
+      "subtitle": "With multiple visual algorithms, launching portrait normal mapping and intelligent lighting capabilities in ByteDance's self-developed effect tool Effect House",
+      "api_link": "Relevant API Page"
+    },
     "douyin_interactive": {
       "title": "Douyin Live: Interactive Game",
       "company": "@ByteDance 2024",
       "subtitle1": "Developed douyin live interactive games where audience likes and gift behaviors affect live streaming visuals or game results.",
       "subtitle2": "This feature reached a maximum of 70,000+ streamers and generated daily revenue of 1 million+ CNY",
       "pdf_title": "Interactive Music Game Development Key Points: Taiko as Example.pdf"
+    },
+    "ar_exhibition": {
+      "title": "AR Exhibition",
+      "company": "@ByteDance 2021",
+      "subtitle": "Provided AR tour guide and AR souvenir capabilities for artist Gaetano Pesce's exhibition in Shenzhen Shekou"
     }
   },
   "cn": {
@@ -292,6 +308,22 @@
       "company": "@ByteDance 2023",
       "subtitle": "图形学 个人练习",
       "pdf_title": "简单易懂的流体模拟实现.pdf"
+    },
+    "douyin_mv": {
+      "title": "抖音直播: MV特效",
+      "company": "@ByteDance 2024",
+      "subtitle": "在抖音直播板块，主导研发使唱跳才艺主播的直播画面随着音乐产生相应视效的能力；<br>且将原子视效开放给UGC创作者，使这一直播效果能够由用户DIY并大批量上线"
+    },
+    "eh_light": {
+      "title": "Effect house: 智能人像打光",
+      "company": "@ByteDance 2024",
+      "subtitle": "与多种视觉算法配合渲染，在字节自研特效工具effect house中上线人像法线与智能打光能力",
+      "api_link": "相应API页面"
+    },
+    "ar_exhibition": {
+      "title": "AR Exhibition",
+      "company": "@ByteDance 2021",
+      "subtitle": "为艺术家加埃塔诺·佩谢在深圳蛇口的展览提供AR导览、AR纪念品能力"
     },
     "douyin_interactive": {
       "title": "抖音直播: 互动游戏",

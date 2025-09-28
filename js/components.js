@@ -749,16 +749,16 @@ class PasswordProtection {
       return false;
     });
 
-    // Disable common keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-      if (e.keyCode === 123 || // F12
-          (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
-          (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
-        e.preventDefault();
-        return false;
-      }
-    });
+    // Disable common keyboard shortcuts - TEMPORARILY DISABLED
+    // document.addEventListener('keydown', function(e) {
+    //   // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    //   if (e.keyCode === 123 || // F12
+    //       (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
+    //       (e.ctrlKey && e.keyCode === 85)) { // Ctrl+U
+    //     e.preventDefault();
+    //     return false;
+    //   }
+    // });
 
     // Disable drag and drop
     document.addEventListener('dragstart', function(e) {
@@ -1026,41 +1026,42 @@ class DownloadProtection {
   }
 
   disableKeyboardShortcuts() {
-    document.addEventListener('keydown', (e) => {
-      // Disable common download shortcuts
-      if (
-        // Ctrl+S (Save)
-        (e.ctrlKey && e.key === 's') ||
-        // Ctrl+Shift+S (Save As)
-        (e.ctrlKey && e.shiftKey && e.key === 'S') ||
-        // Ctrl+A (Select All)
-        (e.ctrlKey && e.key === 'a') ||
-        // Ctrl+C (Copy)
-        (e.ctrlKey && e.key === 'c') ||
-        // Ctrl+V (Paste)
-        (e.ctrlKey && e.key === 'v') ||
-        // Ctrl+X (Cut)
-        (e.ctrlKey && e.key === 'x') ||
-        // F12 (Developer Tools)
-        e.key === 'F12' ||
-        // Ctrl+Shift+I (Developer Tools)
-        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
-        // Ctrl+Shift+J (Console)
-        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
-        // Ctrl+U (View Source)
-        (e.ctrlKey && e.key === 'u') ||
-        // Ctrl+Shift+C (Inspect Element)
-        (e.ctrlKey && e.shiftKey && e.key === 'C') ||
-        // Print Screen
-        e.key === 'PrintScreen' ||
-        // Alt+Print Screen
-        (e.altKey && e.key === 'PrintScreen')
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-    }, true);
+    // TEMPORARILY DISABLED - F12 and developer tools
+    // document.addEventListener('keydown', (e) => {
+    //   // Disable common download shortcuts
+    //   if (
+    //     // Ctrl+S (Save)
+    //     (e.ctrlKey && e.key === 's') ||
+    //     // Ctrl+Shift+S (Save As)
+    //     (e.ctrlKey && e.shiftKey && e.key === 'S') ||
+    //     // Ctrl+A (Select All)
+    //     (e.ctrlKey && e.key === 'a') ||
+    //     // Ctrl+C (Copy)
+    //     (e.ctrlKey && e.key === 'c') ||
+    //     // Ctrl+V (Paste)
+    //     (e.ctrlKey && e.key === 'v') ||
+    //     // Ctrl+X (Cut)
+    //     (e.ctrlKey && e.key === 'x') ||
+    //     // F12 (Developer Tools)
+    //     e.key === 'F12' ||
+    //     // Ctrl+Shift+I (Developer Tools)
+    //     (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+    //     // Ctrl+Shift+J (Console)
+    //     (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+    //     // Ctrl+U (View Source)
+    //     (e.ctrlKey && e.key === 'u') ||
+    //     // Ctrl+Shift+C (Inspect Element)
+    //     (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+    //     // Print Screen
+    //     e.key === 'PrintScreen' ||
+    //     // Alt+Print Screen
+    //     (e.altKey && e.key === 'PrintScreen')
+    //   ) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     return false;
+    //   }
+    // }, true);
   }
 
   disableDragAndDrop() {
@@ -1227,23 +1228,23 @@ class DownloadProtection {
   }
 
   disableDeveloperTools() {
-    // Detect developer tools
-    let devtools = { open: false };
+    // Detect developer tools - TEMPORARILY DISABLED
+    // let devtools = { open: false };
     
-    setInterval(() => {
-      if (window.outerHeight - window.innerHeight > 200 || 
-          window.outerWidth - window.innerWidth > 200) {
-        if (!devtools.open) {
-          devtools.open = true;
-          // Clear console and show warning
-          console.clear();
-          console.log('%c⚠️ 警告：检测到开发者工具！', 'color: red; font-size: 20px; font-weight: bold;');
-          console.log('%c此网站受版权保护，禁止下载任何媒体内容。', 'color: red; font-size: 16px;');
-        }
-      } else {
-        devtools.open = false;
-      }
-    }, 500);
+    // setInterval(() => {
+    //   if (window.outerHeight - window.innerHeight > 200 || 
+    //       window.outerWidth - window.innerWidth > 200) {
+    //     if (!devtools.open) {
+    //       devtools.open = true;
+    //       // Clear console and show warning
+    //       console.clear();
+    //       console.log('%c⚠️ 警告：检测到开发者工具！', 'color: red; font-size: 20px; font-weight: bold;');
+    //       console.log('%c此网站受版权保护，禁止下载任何媒体内容。', 'color: red; font-size: 16px;');
+    //     }
+    //   } else {
+    //     devtools.open = false;
+    //   }
+    // }, 500);
   }
 
   addConsoleWarning() {
