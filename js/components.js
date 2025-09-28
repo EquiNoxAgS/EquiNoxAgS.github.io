@@ -216,7 +216,29 @@ const Footer = function () {
               "equinox.ags@gmail.com"
             )
           ),
-          React.createElement("p", null, React.createElement("strong", null, "Wechat"), " EquiNoxAgS")
+          React.createElement(
+            "p", 
+            { 
+              className: "wechat-hover-container",
+              onMouseEnter: function(e) {
+                const qrPopup = document.getElementById('wechat-qr-popup');
+                if (qrPopup) {
+                  const rect = e.target.getBoundingClientRect();
+                  qrPopup.style.left = rect.left + 'px';
+                  qrPopup.style.top = (rect.top - 140) + 'px';
+                  qrPopup.style.display = 'block';
+                }
+              },
+              onMouseLeave: function() {
+                const qrPopup = document.getElementById('wechat-qr-popup');
+                if (qrPopup) {
+                  qrPopup.style.display = 'none';
+                }
+              }
+            }, 
+            React.createElement("strong", null, "Wechat"), 
+            " EquiNoxAgS"
+          )
         ),
         React.createElement(
           "div",
@@ -254,6 +276,20 @@ const Footer = function () {
           )
         )
       )
+    ),
+    // QR Code popup - moved outside container to avoid layout issues
+    React.createElement(
+      "div",
+      { 
+        id: "wechat-qr-popup",
+        className: "wechat-qr-popup",
+        style: { display: 'none' }
+      },
+      React.createElement("img", { 
+        src: "resources/QR_Code.jpg", 
+        alt: "WeChat QR Code",
+        className: "qr-code-image"
+      })
     )
   );
 };
@@ -864,4 +900,348 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Export for manual initialization
 window.PasswordProtection = PasswordProtection;
+
+// Download Protection System
+class DownloadProtection {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.addStyles();
+    this.disableRightClick();
+    this.disableKeyboardShortcuts();
+    this.disableDragAndDrop();
+    this.disableTextSelection();
+    this.disableImageContextMenu();
+    this.disableVideoContextMenu();
+    this.addImageProtection();
+    this.addVideoProtection();
+    this.addBackgroundImageProtection();
+    this.disableDeveloperTools();
+    this.addConsoleWarning();
+  }
+
+  addStyles() {
+    const existingStyles = document.getElementById('download-protection-styles');
+    if (existingStyles) {
+      existingStyles.remove();
+    }
+
+    const styles = `
+      <style id="download-protection-styles">
+        /* Disable text selection */
+        * {
+          -webkit-user-select: none !important;
+          -moz-user-select: none !important;
+          -ms-user-select: none !important;
+          user-select: none !important;
+          -webkit-touch-callout: none !important;
+          -webkit-tap-highlight-color: transparent !important;
+        }
+
+        /* Disable image dragging */
+        img {
+          -webkit-user-drag: none !important;
+          -khtml-user-drag: none !important;
+          -moz-user-drag: none !important;
+          -o-user-drag: none !important;
+          user-drag: none !important;
+          pointer-events: none !important;
+        }
+
+        /* Disable video dragging */
+        video {
+          -webkit-user-drag: none !important;
+          -khtml-user-drag: none !important;
+          -moz-user-drag: none !important;
+          -o-user-drag: none !important;
+          user-drag: none !important;
+        }
+
+        /* Disable iframe interactions */
+        iframe {
+          pointer-events: none !important;
+        }
+
+        /* Overlay protection for media elements */
+        .media-protection-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          z-index: 10;
+          pointer-events: auto;
+        }
+
+        /* Hide download indicators */
+        a[download] {
+          display: none !important;
+        }
+
+        /* Disable context menu on all elements */
+        * {
+          -webkit-context-menu: none !important;
+          -moz-context-menu: none !important;
+          context-menu: none !important;
+        }
+      </style>
+    `;
+
+    document.head.insertAdjacentHTML('beforeend', styles);
+  }
+
+  disableRightClick() {
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+  }
+
+  disableKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+      // Disable common download shortcuts
+      if (
+        // Ctrl+S (Save)
+        (e.ctrlKey && e.key === 's') ||
+        // Ctrl+Shift+S (Save As)
+        (e.ctrlKey && e.shiftKey && e.key === 'S') ||
+        // Ctrl+A (Select All)
+        (e.ctrlKey && e.key === 'a') ||
+        // Ctrl+C (Copy)
+        (e.ctrlKey && e.key === 'c') ||
+        // Ctrl+V (Paste)
+        (e.ctrlKey && e.key === 'v') ||
+        // Ctrl+X (Cut)
+        (e.ctrlKey && e.key === 'x') ||
+        // F12 (Developer Tools)
+        e.key === 'F12' ||
+        // Ctrl+Shift+I (Developer Tools)
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        // Ctrl+Shift+J (Console)
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        // Ctrl+U (View Source)
+        (e.ctrlKey && e.key === 'u') ||
+        // Ctrl+Shift+C (Inspect Element)
+        (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+        // Print Screen
+        e.key === 'PrintScreen' ||
+        // Alt+Print Screen
+        (e.altKey && e.key === 'PrintScreen')
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+  }
+
+  disableDragAndDrop() {
+    document.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    document.addEventListener('drag', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    document.addEventListener('dragend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+  }
+
+  disableTextSelection() {
+    document.addEventListener('selectstart', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    document.addEventListener('mousedown', (e) => {
+      if (e.detail > 1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+  }
+
+  disableImageContextMenu() {
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+  }
+
+  disableVideoContextMenu() {
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.tagName === 'VIDEO' || e.target.tagName === 'SOURCE') {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+  }
+
+  addImageProtection() {
+    // Add protection overlay to all images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      // Disable right-click on images
+      img.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }, true);
+
+      // Disable drag on images
+      img.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }, true);
+
+      // Add protection overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'media-protection-overlay';
+      overlay.style.position = 'absolute';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = 'transparent';
+      overlay.style.zIndex = '10';
+      overlay.style.pointerEvents = 'auto';
+
+      // Make parent container relative positioned
+      if (img.parentElement) {
+        img.parentElement.style.position = 'relative';
+        img.parentElement.appendChild(overlay);
+      }
+    });
+  }
+
+  addVideoProtection() {
+    // Add protection to all videos
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+      // Disable right-click on videos
+      video.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }, true);
+
+      // Disable drag on videos
+      video.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }, true);
+
+      // Remove controls attribute to prevent right-click menu
+      video.removeAttribute('controls');
+      
+      // Add custom controls that don't allow right-click
+      video.addEventListener('loadedmetadata', () => {
+        video.controls = true;
+      });
+
+      // Add protection overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'media-protection-overlay';
+      overlay.style.position = 'absolute';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = 'transparent';
+      overlay.style.zIndex = '10';
+      overlay.style.pointerEvents = 'auto';
+
+      // Make parent container relative positioned
+      if (video.parentElement) {
+        video.parentElement.style.position = 'relative';
+        video.parentElement.appendChild(overlay);
+      }
+    });
+  }
+
+  addBackgroundImageProtection() {
+    // Add protection to elements with background images
+    const elementsWithBg = document.querySelectorAll('*');
+    elementsWithBg.forEach(element => {
+      const style = window.getComputedStyle(element);
+      if (style.backgroundImage && style.backgroundImage !== 'none') {
+        // Disable right-click on background image elements
+        element.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, true);
+
+        // Disable drag on background image elements
+        element.addEventListener('dragstart', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, true);
+      }
+    });
+  }
+
+  disableDeveloperTools() {
+    // Detect developer tools
+    let devtools = { open: false };
+    
+    setInterval(() => {
+      if (window.outerHeight - window.innerHeight > 200 || 
+          window.outerWidth - window.innerWidth > 200) {
+        if (!devtools.open) {
+          devtools.open = true;
+          // Clear console and show warning
+          console.clear();
+          console.log('%c⚠️ 警告：检测到开发者工具！', 'color: red; font-size: 20px; font-weight: bold;');
+          console.log('%c此网站受版权保护，禁止下载任何媒体内容。', 'color: red; font-size: 16px;');
+        }
+      } else {
+        devtools.open = false;
+      }
+    }, 500);
+  }
+
+  addConsoleWarning() {
+    // Clear console and add warning
+    console.clear();
+    console.log('%c🛡️ 版权保护系统已激活', 'color: #007bff; font-size: 18px; font-weight: bold;');
+    console.log('%c此网站的所有图片和视频内容受版权保护', 'color: #6c757d; font-size: 14px;');
+    console.log('%c禁止下载、复制或传播任何媒体内容', 'color: #dc3545; font-size: 14px; font-weight: bold;');
+    
+    // Clear console periodically
+    setInterval(() => {
+      console.clear();
+      console.log('%c🛡️ 版权保护系统运行中...', 'color: #007bff; font-size: 16px;');
+    }, 3000);
+  }
+}
+
+// Initialize download protection when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  window.downloadProtection = new DownloadProtection();
+});
+
+// Export for manual initialization
+window.DownloadProtection = DownloadProtection;
 

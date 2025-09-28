@@ -11,7 +11,7 @@
       "hotpot_agent": "Hotpot Agent",
       "douyin_mv": "Douyin Live: MV Effect",
       "douyin_interactive": "Douyin Live: Interactive Game",
-      "effect_house": "Effect house: AI Normal Texture",
+      "eh_light": "Effect house: AI Normal Texture",
       "fluid_simulation": "Fluid Simulation",
       "vps_effect": "VPS Effect",
       "ar_exhibition": "AR Art Exhibition",
@@ -94,7 +94,7 @@
       "course": "2018 Zhejiang University Architecture Core Studio",
       "award": "\"Revit Cup\" Finalist Award",
       "type": "Architectural Design Project",
-      "supervisor": "Supervisor: Chen Xiang"
+      "supervisor": "Supervisor: Chen Lin"
     },
     "enning": {
       "title": "En'ning Memory",
@@ -127,12 +127,25 @@
       "collaborators": "Groupmates: Xie Wei, Zhang Xiaoman",
       "supervisors": "Supervisors: Ozel Guvenc, Benjamin Ennemoser",
       "tools": "Tools: Pix2pix&CycleGAN, Rhino, Unreal Engine 4, Unity, AR&VR, Adobe After Effect"
+    },
+    "hotpot_agent": {
+      "title": "Hotpot Agent",
+      "company": "@Keeta 2025",
+      "subtitle": "Image-Text Notes Intelligent Creation AI Agent",
+      "role": "Role: Product Manager, UI/UX, Frontend Development",
+      "mobile_section": "Mobile",
+      "web_section": "Web"
+    },
+    "fluid_simulation": {
+      "title": "Fluid Simulation",
+      "company": "@ByteDance 2023",
+      "subtitle": "Graphics Personal Practice",
+      "pdf_title": "Simple and Easy-to-Understand Fluid Simulation Implementation.pdf"
     }
   },
   "cn": {
     "menu": {
-      "subtitle": "美团｜字节｜UCLA | 浙江大学",
-      "subtitle2": "游戏玩法 | 图形渲染 | AR/VR | UI/UX | 建筑学"
+      "subtitle": "游戏玩法 | 图形渲染 | AR/VR | UI/UX | 建筑学"
     },
     "gallery": {
       "title": "其他作品",
@@ -142,7 +155,7 @@
       "hotpot_agent": "Hotpot Agent",
       "douyin_mv": "抖音直播: MV特效",
       "douyin_interactive": "抖音直播: 互动游戏",
-      "effect_house": "Effect house: 智能人像打光",
+      "eh_light": "Effect house: 智能人像打光",
       "fluid_simulation": "流体模拟",
       "vps_effect": "大场景VPS",
       "ar_exhibition": "AR展馆",
@@ -225,7 +238,7 @@
       "course": "2018 浙江大学建筑学设计课",
       "award": "\"谷雨杯\"入围奖",
       "type": "建筑设计项目",
-      "supervisor": "指导者：陈翔"
+      "supervisor": "指导者：陈林"
     },
     "enning": {
       "title": "恩宁记忆",
@@ -258,6 +271,20 @@
       "collaborators": "合作者：谢纬，张小曼",
       "supervisors": "指导者：Ozel Guvenc, Benjamin Ennemoser",
       "tools": "涉及工具：Pix2pix&CycleGAN, Rhino, Unreal Engine 4, Unity, AR&VR, Adobe After Effect"
+    },
+    "hotpot_agent": {
+      "title": "Hotpot Agent",
+      "company": "@美团点评 2025",
+      "subtitle": "图文笔记智能创作AI Agent实验项目",
+      "role": "角色：产品经理，UI/UX，前端研发",
+      "mobile_section": "移动端",
+      "web_section": "Web端"
+    },
+    "fluid_simulation": {
+      "title": "流体模拟",
+      "company": "@ByteDance 2023",
+      "subtitle": "图形学 个人练习",
+      "pdf_title": "简单易懂的流体模拟实现.pdf"
     }
   }
 }
