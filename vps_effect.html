@@ -30,14 +30,60 @@
      <div class="container animated fadeInUp">
           <div class="row">
                <div class="col-md-offset-1 col-md-10 col-sm-12 brief">
-                    <h1 class="section-title">大场景VPS</h1>
+                    <h1 class="section-title">VPS Effect</h1>
                     <br>
-                    <h4>2022 AR/VR Development</h4>
-                    <h4>Large-Scale Visual Positioning System</h4>
+                    <h4 data-i18n="vps_effect.company">@ByteDance 2022</h4>
                     <br>
-                    <p>Tools: Unity, ARCore, Computer Vision</p>
+                    <p data-i18n="vps_effect.subtitle">
+                        在北京798艺术区与南锣鼓巷等地，使用VPS技术实现景区AR效果，包含留言板等游客互动功能和导航功能
+                    </p>
                     <br>
-                    <p>An advanced AR/VR project focusing on large-scale visual positioning system effects.</p>
+                    <br>
+                    
+                    <!-- Protected content - only loads after password verification -->
+                    <div class="protected-content" style="display: none;">
+                         <!-- First row: Video files -->
+                         <div class="row center-block col-md-12 col-sm-12 p-0">
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0" style="margin-bottom: 50px;">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop" muted>
+                                             <source src="resources/placeholder.mp4" 
+                                                     data-protected-src="resources/vps_effect/798_1.MP4" 
+                                                     type="video/mp4">
+                                        </video>
+                                   </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0" style="margin-bottom: 50px;">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop" muted>
+                                             <source src="resources/placeholder.mp4" 
+                                                     data-protected-src="resources/vps_effect/798_2.MP4" 
+                                                     type="video/mp4">
+                                        </video>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Second row: nlgx gif and bulletinboard video -->
+                         <div class="row center-block col-md-12 col-sm-12 p-0" style="margin-top: 20px;">
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <img src="resources/placeholder.jpg" data-protected-src="resources/vps_effect/nlgx.gif" class="embed-responsive-item" alt="nlgx" style="object-fit: cover;">
+                                   </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-sm-12 py-0">
+                                   <div class="embed-responsive embed-responsive-9by16">
+                                        <video width="100%" height="100%" controls autoplay="autoplay" loop="loop" muted>
+                                             <source src="resources/placeholder.mp4" 
+                                                     data-protected-src="resources/vps_effect/bulletinboard.mp4" 
+                                                     type="video/mp4">
+                                        </video>
+                                   </div>
+                              </div>
+                         </div> 
+                    </div>
                </div>
           </div>
      </div>
@@ -54,7 +100,7 @@
 
 <script>
 // 页面加载完成后隐藏加载器
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(){
     setTimeout(function() {
         document.getElementById('preloader-root').style.display = 'none';
     }, 1000);
