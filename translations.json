@@ -164,6 +164,11 @@
       "title": "AR Exhibition",
       "company": "@ByteDance 2021",
       "subtitle": "Provided AR tour guide and AR souvenir capabilities for artist Gaetano Pesce's exhibition in Shenzhen Shekou"
+    },
+    "particle_dissolve": {
+      "title": "Particle Dissolve",
+      "company": "@ByteDance 2022",
+      "subtitle": "Led the launch of VFX capability in CapCut app for intelligent human recognition and particle dissolution"
     }
   },
   "cn": {
@@ -331,6 +336,11 @@
       "subtitle1": "在抖音直播板块，研发观众点赞、送礼行为对直播画面或游戏结果产生影响的互动小游戏；",
       "subtitle2": "该功能使用主播数量最多达到7w+，日均营收多达100w+ CNY",
       "pdf_title": "互动音乐类游戏研发要点总结：太鼓达人为例.pdf"
+    },
+    "particle_dissolve": {
+      "title": "粒子消散",
+      "company": "@ByteDance 2022",
+      "subtitle": "在剪映App主导上线智能识别人物并化为粒子消散的VFX能力"
     }
-  }
+}
 }

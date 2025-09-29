@@ -29,6 +29,83 @@ body {
     height: 100%;
 }
 
+/* Custom 2:3 aspect ratio */
+.embed-responsive-2by3 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 150%; /* 2:3 比例，即 (3 / 2) * 100% */
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-responsive-2by3 .embed-responsive-item,
+.embed-responsive-2by3 iframe,
+.embed-responsive-2by3 embed,
+.embed-responsive-2by3 object,
+.embed-responsive-2by3 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom 3:4 aspect ratio */
+.embed-responsive-3by4 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 133.33%; /* 3:4 比例，即 (4 / 3) * 100% */
+    height: 0;
+    overflow: hidden;
+}
+
+
+/* Custom 3:2 aspect ratio */
+.embed-responsive-3by2 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 66.67%; /* 3:2 比例，即 (2 / 3) * 100% */
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-responsive-3by2 .embed-responsive-item,
+.embed-responsive-3by2 iframe,
+.embed-responsive-3by2 embed,
+.embed-responsive-3by2 object,
+.embed-responsive-3by2 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom 3:2 aspect ratio */
+.embed-responsive-3by2 {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 66.67%; /* 3:2 比例，即 (2 / 3) * 100% */
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-responsive-3by2 .embed-responsive-item,
+.embed-responsive-3by2 iframe,
+.embed-responsive-3by2 embed,
+.embed-responsive-3by2 object,
+.embed-responsive-3by2 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 
 /*---------------------------------------
     Typorgraphy              
