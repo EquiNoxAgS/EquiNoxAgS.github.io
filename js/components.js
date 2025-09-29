@@ -586,6 +586,136 @@ function updateMenuItems() {
   });
 }
 
+// Global Authentication Manager
+class GlobalAuthManager {
+  constructor() {
+    this.password = '210322';
+    this.authKey = 'global_password_auth';
+    this.init();
+  }
+
+  init() {
+    // Check URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const pwParam = urlParams.get('pw');
+    
+    if (pwParam === this.password) {
+      this.setAuthenticated();
+      console.log('🔓 已通过URL参数认证');
+    }
+    
+    // Setup global link enhancement
+    this.setupGlobalLinkEnhancement();
+  }
+
+  setAuthenticated() {
+    sessionStorage.setItem(this.authKey, 'true');
+    sessionStorage.setItem('auth_timestamp', Date.now().toString());
+  }
+
+  isAuthenticated() {
+    const authFlag = sessionStorage.getItem(this.authKey);
+    if (!authFlag) return false;
+    
+    // Check timeout (24 hours)
+    const authTimestamp = sessionStorage.getItem('auth_timestamp');
+    if (authTimestamp) {
+      const timestamp = parseInt(authTimestamp);
+      const now = Date.now();
+      const maxAge = 24 * 60 * 60 * 1000;
+      
+      if (now - timestamp > maxAge) {
+        sessionStorage.removeItem(this.authKey);
+        sessionStorage.removeItem('auth_timestamp');
+        return false;
+      }
+    }
+    
+    return true;
+  }
+
+  setupGlobalLinkEnhancement() {
+    const addAuthToUrl = (url) => {
+      // Skip external links, anchors, mailto, etc.
+      if (!url || url.includes('#') || url.startsWith('mailto:') || 
+          url.startsWith('http://') || url.startsWith('https://') ||
+          url.startsWith('javascript:') || url.includes('data:')) {
+        return url;
+      }
+      
+      // Skip if URL already has password parameter
+      if (url.includes('pw=')) {
+        return url;
+      }
+      
+      // Only add to .html files and internal links
+      if (this.isAuthenticated() && (url.includes('.html') || !url.includes('.'))) {
+        const separator = url.includes('?') ? '&' : '?';
+        return url + separator + 'pw=' + this.password;
+      }
+      
+      return url;
+    };
+
+    // Update all existing links
+    const updateLinks = () => {
+      document.querySelectorAll('a[href]').forEach(link => {
+        const currentHref = link.getAttribute('href');
+        // Only process if we haven't processed this link before
+        if (!link.dataset.processed && !currentHref.includes('pw=')) {
+          const enhancedHref = addAuthToUrl(currentHref);
+          if (enhancedHref !== currentHref) {
+            link.setAttribute('href', enhancedHref);
+            link.dataset.processed = 'true'; // Mark as processed
+          }
+        }
+      });
+    };
+
+    // Update links immediately
+    updateLinks();
+
+    // Watch for new links added dynamically
+    const observer = new MutationObserver((mutations) => {
+      let shouldUpdate = false;
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              if (node.tagName === 'A' || node.querySelector && node.querySelector('a')) {
+                shouldUpdate = true;
+              }
+            }
+          });
+        }
+      });
+      
+      if (shouldUpdate) {
+        setTimeout(updateLinks, 100); // Small delay to ensure DOM is ready
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
+
+  propagateToAllLinks() {
+    // Force update all links, but only if not already processed
+    setTimeout(() => {
+      document.querySelectorAll('a[href]').forEach(link => {
+        const url = link.getAttribute('href');
+        if (url && url.includes('.html') && !url.includes('pw=') && !link.dataset.processed) {
+          const separator = url.includes('?') ? '&' : '?';
+          link.setAttribute('href', url + separator + 'pw=' + this.password);
+          link.dataset.processed = 'true'; // Mark as processed
+        }
+      });
+    }, 100);
+  }
+}
+
 // Password Protection Component
 class PasswordProtection {
   constructor(options = {}) {
@@ -597,11 +727,42 @@ class PasswordProtection {
   }
 
   init() {
+    // Check if page has password protection container
+    if (!document.getElementById('password-protection-container')) {
+      return;
+    }
+    
+    // Check if already authenticated globally
+    if (window.globalAuth && window.globalAuth.isAuthenticated()) {
+      this.bypassPasswordProtection();
+      return;
+    }
+    
     this.addStyles();
     this.createPasswordOverlay();
     this.bindEvents();
     this.applyTranslations();
     this.addProtectionMeasures();
+  }
+
+  bypassPasswordProtection() {
+    // Remove password protection from the target element
+    const targetElement = document.querySelector(this.targetSelector);
+    if (targetElement) {
+      targetElement.classList.remove('password-protected');
+    }
+    
+    // Remove any existing password overlay
+    const existingOverlay = document.getElementById(this.containerId);
+    if (existingOverlay) {
+      existingOverlay.remove();
+    }
+    
+    // Load protected content immediately
+    this.loadProtectedContent();
+    
+    // Notify that bypass was successful
+    console.log('🔓 密码保护已绕过');
   }
 
   addStyles() {
@@ -686,12 +847,25 @@ class PasswordProtection {
     const inputPassword = passwordInput.value;
     
     if (inputPassword === this.password) {
+      // Set global authentication
+      if (window.globalAuth) {
+        window.globalAuth.setAuthenticated();
+        window.globalAuth.propagateToAllLinks();
+      }
+      
       // Remove password protection
       document.getElementById(this.containerId).style.display = 'none';
       document.querySelector(this.targetSelector).classList.remove('password-protected');
       
       // Load protected content after password verification
       this.loadProtectedContent();
+      
+      // Redirect current page to include the pw parameter
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('pw', this.password);
+      window.history.replaceState({}, '', currentUrl);
+      
+      console.log('🔓 密码验证成功，所有链接已更新');
     } else {
       // Show error message
       errorMessage.style.display = 'block';
@@ -913,9 +1087,12 @@ class PasswordProtection {
   document.head.insertAdjacentHTML('beforeend', styles);
 })();
 
-// Initialize password protection when DOM is ready
+// Initialize authentication system when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  // Auto-initialize if password-protection-container exists
+  // Always initialize global authentication manager first
+  window.globalAuth = new GlobalAuthManager();
+  
+  // Initialize password protection if needed
   if (document.getElementById('password-protection-container')) {
     window.passwordProtection = new PasswordProtection({
       targetSelector: '#single-project'
@@ -925,6 +1102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Export for manual initialization
 window.PasswordProtection = PasswordProtection;
+window.GlobalAuthManager = GlobalAuthManager;
 
 // Download Protection System
 class DownloadProtection {
